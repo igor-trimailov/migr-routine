@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/migr-routine/static/css/main.4313a538.chunk.css",
-    "main.js": "/migr-routine/static/js/main.81236a72.chunk.js",
-    "main.js.map": "/migr-routine/static/js/main.81236a72.chunk.js.map",
+    "main.js": "/migr-routine/static/js/main.f325bfc1.chunk.js",
+    "main.js.map": "/migr-routine/static/js/main.f325bfc1.chunk.js.map",
     "runtime-main.js": "/migr-routine/static/js/runtime-main.c6a7598e.js",
     "runtime-main.js.map": "/migr-routine/static/js/runtime-main.c6a7598e.js.map",
     "static/css/2.f524894f.chunk.css": "/migr-routine/static/css/2.f524894f.chunk.css",
     "static/js/2.d93b25fe.chunk.js": "/migr-routine/static/js/2.d93b25fe.chunk.js",
     "static/js/2.d93b25fe.chunk.js.map": "/migr-routine/static/js/2.d93b25fe.chunk.js.map",
     "index.html": "/migr-routine/index.html",
-    "precache-manifest.a90463e9e8cbec3f24d1b8e44e23a935.js": "/migr-routine/precache-manifest.a90463e9e8cbec3f24d1b8e44e23a935.js",
+    "precache-manifest.0de71387e0a3a88477b5055ee4e1c7cf.js": "/migr-routine/precache-manifest.0de71387e0a3a88477b5055ee4e1c7cf.js",
     "service-worker.js": "/migr-routine/service-worker.js",
     "static/css/2.f524894f.chunk.css.map": "/migr-routine/static/css/2.f524894f.chunk.css.map",
     "static/css/main.4313a538.chunk.css.map": "/migr-routine/static/css/main.4313a538.chunk.css.map",
@@ -22,6 +22,6 @@
     "static/css/2.f524894f.chunk.css",
     "static/js/2.d93b25fe.chunk.js",
     "static/css/main.4313a538.chunk.css",
-    "static/js/main.81236a72.chunk.js"
+    "static/js/main.f325bfc1.chunk.js"
   ]
 }
