@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/migr-routine/static/css/main.5f361e03.chunk.css",
+    "main.js": "/migr-routine/static/js/main.efe12dc6.chunk.js",
+    "main.js.map": "/migr-routine/static/js/main.efe12dc6.chunk.js.map",
+    "runtime-main.js": "/migr-routine/static/js/runtime-main.c6a7598e.js",
+    "runtime-main.js.map": "/migr-routine/static/js/runtime-main.c6a7598e.js.map",
+    "static/js/2.4c801110.chunk.js": "/migr-routine/static/js/2.4c801110.chunk.js",
+    "static/js/2.4c801110.chunk.js.map": "/migr-routine/static/js/2.4c801110.chunk.js.map",
+    "index.html": "/migr-routine/index.html",
+    "precache-manifest.8e4665c5c085ffc9e849f84838026fd0.js": "/migr-routine/precache-manifest.8e4665c5c085ffc9e849f84838026fd0.js",
+    "service-worker.js": "/migr-routine/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/migr-routine/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.4c801110.chunk.js.LICENSE.txt": "/migr-routine/static/js/2.4c801110.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/migr-routine/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c6a7598e.js",
+    "static/js/2.4c801110.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.efe12dc6.chunk.js"
+  ]
+}
