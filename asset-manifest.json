@@ -1,23 +1,27 @@
 {
   "files": {
-    "main.css": "/migr-routine/static/css/main.5f361e03.chunk.css",
-    "main.js": "/migr-routine/static/js/main.efe12dc6.chunk.js",
-    "main.js.map": "/migr-routine/static/js/main.efe12dc6.chunk.js.map",
+    "main.css": "/migr-routine/static/css/main.4313a538.chunk.css",
+    "main.js": "/migr-routine/static/js/main.81236a72.chunk.js",
+    "main.js.map": "/migr-routine/static/js/main.81236a72.chunk.js.map",
     "runtime-main.js": "/migr-routine/static/js/runtime-main.c6a7598e.js",
     "runtime-main.js.map": "/migr-routine/static/js/runtime-main.c6a7598e.js.map",
-    "static/js/2.4c801110.chunk.js": "/migr-routine/static/js/2.4c801110.chunk.js",
-    "static/js/2.4c801110.chunk.js.map": "/migr-routine/static/js/2.4c801110.chunk.js.map",
+    "static/css/2.f524894f.chunk.css": "/migr-routine/static/css/2.f524894f.chunk.css",
+    "static/js/2.d93b25fe.chunk.js": "/migr-routine/static/js/2.d93b25fe.chunk.js",
+    "static/js/2.d93b25fe.chunk.js.map": "/migr-routine/static/js/2.d93b25fe.chunk.js.map",
     "index.html": "/migr-routine/index.html",
-    "precache-manifest.8e4665c5c085ffc9e849f84838026fd0.js": "/migr-routine/precache-manifest.8e4665c5c085ffc9e849f84838026fd0.js",
+    "precache-manifest.a90463e9e8cbec3f24d1b8e44e23a935.js": "/migr-routine/precache-manifest.a90463e9e8cbec3f24d1b8e44e23a935.js",
     "service-worker.js": "/migr-routine/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/migr-routine/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.4c801110.chunk.js.LICENSE.txt": "/migr-routine/static/js/2.4c801110.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/migr-routine/static/media/logo.5d5d9eef.svg"
+    "static/css/2.f524894f.chunk.css.map": "/migr-routine/static/css/2.f524894f.chunk.css.map",
+    "static/css/main.4313a538.chunk.css.map": "/migr-routine/static/css/main.4313a538.chunk.css.map",
+    "static/js/2.d93b25fe.chunk.js.LICENSE.txt": "/migr-routine/static/js/2.d93b25fe.chunk.js.LICENSE.txt",
+    "static/media/beep.wav": "/migr-routine/static/media/beep.9f760093.wav",
+    "static/media/index.scss": "/migr-routine/static/media/icomoon.72c742bc.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.c6a7598e.js",
-    "static/js/2.4c801110.chunk.js",
-    "static/css/main.5f361e03.chunk.css",
-    "static/js/main.efe12dc6.chunk.js"
+    "static/css/2.f524894f.chunk.css",
+    "static/js/2.d93b25fe.chunk.js",
+    "static/css/main.4313a538.chunk.css",
+    "static/js/main.81236a72.chunk.js"
   ]
 }
