@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/migr-routine/static/css/main.aa544bcd.chunk.css",
-    "main.js": "/migr-routine/static/js/main.f325bfc1.chunk.js",
-    "main.js.map": "/migr-routine/static/js/main.f325bfc1.chunk.js.map",
+    "main.css": "/migr-routine/static/css/main.3fb2ea15.chunk.css",
+    "main.js": "/migr-routine/static/js/main.16077a3f.chunk.js",
+    "main.js.map": "/migr-routine/static/js/main.16077a3f.chunk.js.map",
     "runtime-main.js": "/migr-routine/static/js/runtime-main.c6a7598e.js",
     "runtime-main.js.map": "/migr-routine/static/js/runtime-main.c6a7598e.js.map",
     "static/css/2.f524894f.chunk.css": "/migr-routine/static/css/2.f524894f.chunk.css",
-    "static/js/2.d93b25fe.chunk.js": "/migr-routine/static/js/2.d93b25fe.chunk.js",
-    "static/js/2.d93b25fe.chunk.js.map": "/migr-routine/static/js/2.d93b25fe.chunk.js.map",
+    "static/js/2.028a9524.chunk.js": "/migr-routine/static/js/2.028a9524.chunk.js",
+    "static/js/2.028a9524.chunk.js.map": "/migr-routine/static/js/2.028a9524.chunk.js.map",
     "index.html": "/migr-routine/index.html",
-    "precache-manifest.b957b30a6aa9293712ba01a2a802fd97.js": "/migr-routine/precache-manifest.b957b30a6aa9293712ba01a2a802fd97.js",
+    "precache-manifest.a735792b38ddec574d015f24e1bb8585.js": "/migr-routine/precache-manifest.a735792b38ddec574d015f24e1bb8585.js",
     "service-worker.js": "/migr-routine/service-worker.js",
     "static/css/2.f524894f.chunk.css.map": "/migr-routine/static/css/2.f524894f.chunk.css.map",
-    "static/css/main.aa544bcd.chunk.css.map": "/migr-routine/static/css/main.aa544bcd.chunk.css.map",
-    "static/js/2.d93b25fe.chunk.js.LICENSE.txt": "/migr-routine/static/js/2.d93b25fe.chunk.js.LICENSE.txt",
+    "static/css/main.3fb2ea15.chunk.css.map": "/migr-routine/static/css/main.3fb2ea15.chunk.css.map",
+    "static/js/2.028a9524.chunk.js.LICENSE.txt": "/migr-routine/static/js/2.028a9524.chunk.js.LICENSE.txt",
     "static/media/beep.wav": "/migr-routine/static/media/beep.9f760093.wav",
     "static/media/index.scss": "/migr-routine/static/media/icomoon.72c742bc.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.c6a7598e.js",
     "static/css/2.f524894f.chunk.css",
-    "static/js/2.d93b25fe.chunk.js",
-    "static/css/main.aa544bcd.chunk.css",
-    "static/js/main.f325bfc1.chunk.js"
+    "static/js/2.028a9524.chunk.js",
+    "static/css/main.3fb2ea15.chunk.css",
+    "static/js/main.16077a3f.chunk.js"
   ]
 }
