@@ -1,0 +1,112 @@
+{
+  "exerciseList": [
+    {
+      "id": 1,
+      "name": "Arm Circles (Forward)",
+      "image": "arm_circles.png",
+      "image_alt": "Arm Circles",
+      "sound": "arm_circles.mp3",
+      "duration": 30,
+      "order": 1
+    },
+    {
+      "id": 2,
+      "name": "Arm Circles (Backward)",
+      "image": "arm_circles.png",
+      "image_alt": "Arm Circles",
+      "sound": "arm_circles.mp3",
+      "duration": 30,
+      "order": 2
+    },
+    {
+      "id": 3,
+      "name": "Star Toe Touches",
+      "image": "start_toe_touches.png",
+      "image_alt": "Start Toe Touches",
+      "sound": "start_toe_touches.mp3",
+      "duration": 30,
+      "order": 3
+    },
+    {
+      "id": 4,
+      "name": "High Knees",
+      "image": "high_knees.png",
+      "image_alt": "High Knees",
+      "sound": "high_knees.mp3",
+      "duration": 30,
+      "order": 4
+    },
+    {
+      "id": 5,
+      "name": "Squats",
+      "image": "squats.png",
+      "image_alt": "Squats",
+      "sound": "squats.mp3",
+      "duration": 30,
+      "order": 5
+    },
+    {
+      "id": 6,
+      "name": "Hip Flexors",
+      "image": "hip_flexors.png",
+      "image_alt": "Hip Flexors",
+      "sound": "hip_flexors.mp3",
+      "duration": 30,
+      "order": 6
+    },
+    {
+      "id": 7,
+      "name": "Jumping Jacks",
+      "image": "jumping_jacks.png",
+      "image_alt": "Jumping Jacks",
+      "sound": "jumping_jacks.mp3",
+      "duration": 30,
+      "order": 7
+    },
+    {
+      "id": 8,
+      "name": "Hamstring Stretch (Left)",
+      "image": "hamstring_stretch.png",
+      "image_alt": "Hamstring Stretch",
+      "sound": "hamstring_stretch.mp3",
+      "duration": 45,
+      "order": 8
+    },
+    {
+      "id": 9,
+      "name": "Hamstring Stretch (Right)",
+      "image": "hamstring_stretch.png",
+      "image_alt": "Hamstring Stretch",
+      "sound": "hamstring_stretch.mp3",
+      "duration": 45,
+      "order": 9
+    },
+    {
+      "id": 10,
+      "name": "Squat Side Kick",
+      "image": "squat_side_kick.png",
+      "image_alt": "Squat Side Kick",
+      "sound": "squat_side_kick.mp3",
+      "duration": 45,
+      "order": 10
+    },
+    {
+      "id": 11,
+      "name": "Plank",
+      "image": "plank.png",
+      "image_alt": "Plank",
+      "sound": "plank.mp3",
+      "duration": 45,
+      "order": 11
+    },
+    {
+      "id": 12,
+      "name": "Bridge",
+      "image": "bridge.png",
+      "image_alt": "Bridge",
+      "sound": "bridge.mp3",
+      "duration": 45,
+      "order": 12
+    }
+  ]
+}
