@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "aa12a04b84830f3ecdc9cfaf2888720d",
+    "revision": "edab5b4553a1fc0f649a05bfaf562a22",
     "url": "/migr-routine/index.html"
   },
   {
-    "revision": "0cd549b38a19e8a9c74f",
+    "revision": "5ab15214119da6a0f7fc",
     "url": "/migr-routine/static/css/2.f524894f.chunk.css"
   },
   {
-    "revision": "599684ac9467ce94c2b7",
-    "url": "/migr-routine/static/css/main.203afcbd.chunk.css"
+    "revision": "ce01bf530228f7214948",
+    "url": "/migr-routine/static/css/main.74281dd2.chunk.css"
   },
   {
-    "revision": "0cd549b38a19e8a9c74f",
-    "url": "/migr-routine/static/js/2.842e6038.chunk.js"
+    "revision": "5ab15214119da6a0f7fc",
+    "url": "/migr-routine/static/js/2.c4ef2d46.chunk.js"
   },
   {
     "revision": "117d65892edc8adcd29d4a0d57b5a80a",
-    "url": "/migr-routine/static/js/2.842e6038.chunk.js.LICENSE.txt"
+    "url": "/migr-routine/static/js/2.c4ef2d46.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "599684ac9467ce94c2b7",
-    "url": "/migr-routine/static/js/main.741c4093.chunk.js"
+    "revision": "ce01bf530228f7214948",
+    "url": "/migr-routine/static/js/main.0de09ed5.chunk.js"
   },
   {
     "revision": "657b5437d83fa0f2de44",
