@@ -3,6 +3,7 @@
     {
       "id": 1,
       "name": "RA Routine",
+      "description": "Routine targeter specifically those with rheumatoid arthritis, making sure there are no exercises that might put unnecessary pressure on the joints.",
       "exercises": [
         {
           "id": 1,
@@ -117,6 +118,7 @@
     {
       "id": 2,
       "name": "Full Budy Routine",
+      "description": "Full body exercise routine for your daily needs",
       "exercises": [
         {
           "id": 1,
