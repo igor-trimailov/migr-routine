@@ -2,12 +2,21 @@
   "routines": [
     {
       "id": 1,
-      "name": "RA Routine",
-      "description": "Routine targeter specifically those with rheumatoid arthritis, making sure there are no exercises that might put unnecessary pressure on the joints.",
+      "name": {
+        "en_GB": "RA routine",
+        "ru_RU": "Упражнения для РА"
+      },
+      "description": {
+        "en_GB": "Routine designed specifically for prople with rheumatoid arthritis, making sure there are no exercises that might put unnecessary pressure on the joints. Before starting these exercises, make sure to talk to your doctor",
+        "ru_RU": "Упражнения преднозначенные для людей с ревматоидным артритом, которые не оказывают ненужное давление на суставы. Прежде чем начать выполнение упражнений необходимо посоветоваться с врачом!"
+      },
       "exercises": [
         {
           "id": 1,
-          "name": "Wrist Extension (Right)",
+          "name": {
+            "en_GB": "Wrist Extension (Right)",
+            "ru_RU": "Растяжка Запястья (Правого)"
+          },
           "image": "wrist_extension.png",
           "image_alt": "Wrist Extension",
           "sound": "wrist_extension.mp3",
@@ -16,7 +25,10 @@
         },
         {
           "id": 2,
-          "name": "Wrist Extension (Left)",
+          "name": {
+            "en_GB": "Wrist Extension (Left)",
+            "ru_RU": "Растяжка Запястья (Левого)"
+          },
           "image": "wrist_extension.png",
           "image_alt": "Wrist Extension",
           "sound": "wrist_extension.mp3",
@@ -117,8 +129,14 @@
     },
     {
       "id": 2,
-      "name": "Full Budy Routine",
-      "description": "Full body exercise routine for your daily needs",
+      "name": {
+        "en_GB": "Full body routine",
+        "ru_RU": "Упражнения для всего тела"
+      },
+      "description": {
+        "en_GB": "Full body exercise routine for your daily needs",
+        "ru_RU": "Эффективная зарядка для всего тела в домашних условиях"
+      },
       "exercises": [
         {
           "id": 1,
