@@ -1,0 +1,112 @@
+{
+  "exerciseList": [
+    {
+      "id": 1,
+      "name": "Wrist Extension (Right)",
+      "image": "wrist_extension.png",
+      "image_alt": "Wrist Extension",
+      "sound": "wrist_extension.mp3",
+      "duration": 30,
+      "order": 1
+    },
+    {
+      "id": 2,
+      "name": "Wrist Extension (Left)",
+      "image": "wrist_extension.png",
+      "image_alt": "Wrist Extension",
+      "sound": "wrist_extension.mp3",
+      "duration": 30,
+      "order": 2
+    },
+    {
+      "id": 3,
+      "name": "Wrist Flexion (Right)",
+      "image": "wrist_flexion.png",
+      "image_alt": "Wrist Flexion",
+      "sound": "wrist_flexion.mp3",
+      "duration": 30,
+      "order": 3
+    },
+    {
+      "id": 4,
+      "name": "Wrist Flexion (Left)",
+      "image": "wrist_flexion.png",
+      "image_alt": "Wrist Flexion",
+      "sound": "wrist_flexion.mp3",
+      "duration": 30,
+      "order": 4
+    },
+    {
+      "id": 5,
+      "name": "Grip Squeeze",
+      "image": "grip_squeeze.png",
+      "image_alt": "Grip Squeeze",
+      "sound": "grip_squeeze.mp3",
+      "duration": 30,
+      "order": 5
+    },
+    {
+      "id": 6,
+      "name": "Forearm Pronation and Supination (Left)",
+      "image": "forearm_pronation_and_supination.png",
+      "image_alt": "Forearm Pronation and Supination",
+      "sound": "forearm_pronation_and_supination.mp3",
+      "duration": 30,
+      "order": 6
+    },
+    {
+      "id": 7,
+      "name": "Forearm Pronation and Supination (Right)",
+      "image": "forearm_pronation_and_supination.png",
+      "image_alt": "Forearm Pronation and Supination",
+      "sound": "forearm_pronation_and_supination.mp3",
+      "duration": 30,
+      "order": 7
+    },
+    {
+      "id": 8,
+      "name": "Forward Lunge",
+      "image": "forward_lunge.png",
+      "image_alt": "Forward Lunge",
+      "sound": "forward_lunge.mp3",
+      "duration": 60,
+      "order": 8
+    },
+    {
+      "id": 9,
+      "name": "Achilles Stretch",
+      "image": "achilles_stretch.png",
+      "image_alt": "Achilles Stretch",
+      "sound": "achilles_stretch.mp3",
+      "duration": 60,
+      "order": 9
+    },
+    {
+      "id": 10,
+      "name": "Tiptoe Squats",
+      "image": "tiptoe_squats.png",
+      "image_alt": "Tiptoe Squats",
+      "sound": "tiptoe_squats.mp3",
+      "duration": 60,
+      "order": 10
+    },
+    {
+      "id": 11,
+      "name": "Side Lunge (Right)",
+      "image": "side_lunge.png",
+      "image_alt": "Side Lunge",
+      "sound": "side_lunge.mp3",
+      "duration": 30,
+      "order": 11
+    },
+    {
+      "id": 12,
+      "name": "Side Lunge (Left)",
+      "image": "side_lunge.png",
+      "image_alt": "Side Lunge",
+      "sound": "side_lunge.mp3",
+      "duration": 30,
+      "order": 12
+    }
+  ]
+}

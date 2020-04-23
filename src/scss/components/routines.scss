@@ -1,0 +1,44 @@
+.routines {
+  .top-nav {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    .title {
+      color: darken($primary, 10%);
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .menu {
+      display: flex;
+      &__item {
+        padding: 5px;
+        color: darken($secondary, 10%);
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__jumbotron {
+    display: flex;
+    &-text {
+      flex-grow: 2;
+    }
+  
+    &-image {
+      display: flex;
+      align-items: center;
+      max-width: 250px;
+      flex-grow: 1;
+    }
+  }
+  
+}
+
+.jumbotron {
+  color: $primary-text;
+  background: $primary;
+  background: $primary-gradient;
+}

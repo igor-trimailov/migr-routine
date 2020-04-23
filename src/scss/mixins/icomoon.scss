@@ -1,0 +1,21 @@
+@mixin icon($icon, $position: "after") {
+  // If we're replacing the text, set font-size to 0
+  // @if $replace {
+    // font-size: 0;
+  // }
+  // Pseudo-element properties
+  &:#{$position} {
+    @extend .icon--#{$icon};
+    font-family: 'icomoon';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    // @if $replace {
+      // font-size: 1rem;
+    // }
+    // content: '';
+    @content;
+  }
+}

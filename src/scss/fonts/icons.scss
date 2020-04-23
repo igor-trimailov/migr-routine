@@ -1,0 +1,36 @@
+.icon {
+  &--cross {
+    content: '\ea0f';
+  }
+
+  &--play {
+    content: '\ea1c';
+  }
+  &--pause {
+    content: '\ea1d';
+  }
+
+  &--previous {
+    content: '\ea23';
+  }
+  
+  &--next {
+    content: '\ea24';
+  }
+
+  &--play-2 {
+    content: '\ea15';
+  }
+
+  &--pause-2 {
+    content: '\ea16';
+  }
+
+  &--previous-2 {
+    content: '\ea18';
+  }
+
+  &--next-2 {
+    content: '\ea19';
+  }
+}
