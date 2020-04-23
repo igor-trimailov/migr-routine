@@ -2,6 +2,7 @@ The goal of this project was to create a custom exercise application for my sign
 
 At the moment the exercise list is read from a data.json file in format:
 
+```
 {
   "routines": [
     {
@@ -28,5 +29,6 @@ At the moment the exercise list is read from a data.json file in format:
     },
   ],
 },
+```
 
 You can add as manu routines and exercises as you like. In future iterations this information will be fetched from an API
