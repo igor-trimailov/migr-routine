@@ -14,8 +14,8 @@
         {
           "id": 1,
           "name": {
-            "en_GB": "Wrist Extension (Right)",
-            "ru_RU": "Растяжка Запястья (Правого)"
+            "en_GB": "Wrist Extension",
+            "ru_RU": "Разгибание запястий с гантелями"
           },
           "image": "wrist_extension.png",
           "image_alt": "Wrist Extension",
@@ -26,50 +26,56 @@
         {
           "id": 2,
           "name": {
-            "en_GB": "Wrist Extension (Left)",
-            "ru_RU": "Растяжка Запястья (Левого)"
+            "en_GB": "Wrist Flexion",
+            "ru_RU": "Сгибание запястий с гантелями"
           },
-          "image": "wrist_extension.png",
-          "image_alt": "Wrist Extension",
-          "sound": "wrist_extension.mp3",
+          "image": "wrist_flexion.png",
+          "image_alt": "Wrist Flexion",
+          "sound": "wrist_flexion.mp3",
           "duration": 30,
           "order": 2
         },
         {
           "id": 3,
-          "name": "Wrist Flexion (Right)",
-          "image": "wrist_flexion.png",
-          "image_alt": "Wrist Flexion",
-          "sound": "wrist_flexion.mp3",
+          "name": {
+            "en_GB": "Grip Squeeze (Right)",
+            "ru_RU": "Сжимание кулака (Правого)"
+          },
+          "image": "grip_squeeze.png",
+          "image_alt": "Grip Squeeze",
+          "sound": "grip_squeeze.mp3",
           "duration": 30,
           "order": 3
         },
         {
           "id": 4,
-          "name": "Wrist Flexion (Left)",
-          "image": "wrist_flexion.png",
-          "image_alt": "Wrist Flexion",
-          "sound": "wrist_flexion.mp3",
+          "name": {
+            "en_GB": "Grip Squeeze (Left)",
+            "ru_RU": "Сжимание кулака (Левого)"
+          },
+          "image": "grip_squeeze.png",
+          "image_alt": "Grip Squeeze",
+          "sound": "grip_squeeze.mp3",
           "duration": 30,
           "order": 4
         },
         {
           "id": 5,
           "name": {
-            "en_GB": "Grip Squeeze",
-            "ru_RU": "Сжимание кулаков"
+            "en_GB": "Forearm Pronation and Supination (Left)",
+            "ru_RU": "Вращение запястья с гантелей (Левого)"
           },
-          "image": "grip_squeeze.png",
-          "image_alt": "Grip Squeeze",
-          "sound": "grip_squeeze.mp3",
+          "image": "forearm_pronation_and_supination.png",
+          "image_alt": "Forearm Pronation and Supination",
+          "sound": "forearm_pronation_and_supination.mp3",
           "duration": 30,
           "order": 5
         },
         {
           "id": 6,
           "name": {
-            "en_GB": "Forearm Pronation and Supination (Left)",
-            "ru_RU": "Вращение запястья с гантелей (Левого)"
+            "en_GB": "Forearm Pronation and Supination (Right)",
+            "ru_RU": "Вращение запястья с гантелей (Правого)"
           },
           "image": "forearm_pronation_and_supination.png",
           "image_alt": "Forearm Pronation and Supination",
@@ -80,18 +86,6 @@
         {
           "id": 7,
           "name": {
-            "en_GB": "Forearm Pronation and Supination (Right)",
-            "ru_RU": "Вращение запястья с гантелей (Правого)"
-          },
-          "image": "forearm_pronation_and_supination.png",
-          "image_alt": "Forearm Pronation and Supination",
-          "sound": "forearm_pronation_and_supination.mp3",
-          "duration": 30,
-          "order": 7
-        },
-        {
-          "id": 8,
-          "name": {
             "en_GB": "Forward Lunge",
             "ru_RU": "Выпад вперёд"
           },
@@ -99,10 +93,10 @@
           "image_alt": "Forward Lunge",
           "sound": "forward_lunge.mp3",
           "duration": 60,
-          "order": 8
+          "order": 7
         },
         {
-          "id": 9,
+          "id": 8,
           "name": {
             "en_GB": "Achilles Stretch",
             "ru_RU": "Растяжка Ахиллова сухожилия"
@@ -111,31 +105,34 @@
           "image_alt": "Achilles Stretch",
           "sound": "achilles_stretch.mp3",
           "duration": 60,
-          "order": 9
+          "order": 8
         },
         {
-          "id": 10,
-          "name": "Tiptoe Squats",
+          "id": 9,
+          "name": {
+            "en_GB": "Tiptoe Squats",
+            "ru_RU": "Приседания на носочках"
+          },
           "image": "tiptoe_squats.png",
           "image_alt": "Tiptoe Squats",
           "sound": "tiptoe_squats.mp3",
           "duration": 60,
-          "order": 10
+          "order": 9
         },
         {
-          "id": 11,
+          "id": 10,
           "name": {
             "en_GB": "Side Lunge (Right)",
-            "ru_RU": "Боковой выпад влево"
+            "ru_RU": "Боковой выпад вправо"
           },
           "image": "side_lunge.png",
           "image_alt": "Side Lunge",
           "sound": "side_lunge.mp3",
           "duration": 30,
-          "order": 11
+          "order": 10
         },
         {
-          "id": 12,
+          "id": 11,
           "name": {
             "en_GB": "Side Lunge (Left)",
             "ru_RU": "Боковой выпад влево"
@@ -144,7 +141,7 @@
           "image_alt": "Side Lunge",
           "sound": "side_lunge.mp3",
           "duration": 30,
-          "order": 12
+          "order": 11
         }
       ]
     },
@@ -197,7 +194,10 @@
         },
         {
           "id": 4,
-          "name": "High Knees",
+          "name": {
+            "en_GB": "High Knees",
+            "ru_RU": "Прыжки с высоко поднятыми коленями"
+          },
           "image": "high_knees.png",
           "image_alt": "High Knees",
           "sound": "high_knees.mp3",
@@ -206,7 +206,10 @@
         },
         {
           "id": 5,
-          "name": "Squats",
+          "name": {
+            "en_GB": "Squats",
+            "ru_RU": "Приседания"
+          },
           "image": "squats.png",
           "image_alt": "Squats",
           "sound": "squats.mp3",
@@ -215,7 +218,10 @@
         },
         {
           "id": 6,
-          "name": "Hip Flexors",
+          "name": {
+            "en_GB": "Hip Flexors",
+            "ru_RU": "Растяжка бедра"
+          },
           "image": "hip_flexor.png",
           "image_alt": "Hip Flexors",
           "sound": "hip_flexor.mp3",
@@ -224,7 +230,10 @@
         },
         {
           "id": 7,
-          "name": "Jumping Jacks",
+          "name": {
+            "en_GB": "Jumping Jacks",
+            "ru_RU": "Прыжки Джека"
+          },
           "image": "jumping_jacks.png",
           "image_alt": "Jumping Jacks",
           "sound": "jumping_jacks.mp3",
@@ -233,7 +242,11 @@
         },
         {
           "id": 8,
-          "name": "Hamstring Stretch (Left)",
+          "name": {
+            "en_GB": "Hamstring Stretch (Left)",
+            "ru_RU": "Растяжка подколенных сухожилий (Левогой ноги)"
+          },
+          
           "image": "hamstring_stretch.png",
           "image_alt": "Hamstring Stretch",
           "sound": "hamstring_stretch.mp3",
@@ -242,7 +255,10 @@
         },
         {
           "id": 9,
-          "name": "Hamstring Stretch (Right)",
+          "name": {
+            "en_GB": "Hamstring Stretch (Right)",
+            "ru_RU": "Растяжка подколенных сухожилий (Паравой ноги)"
+          },
           "image": "hamstring_stretch.png",
           "image_alt": "Hamstring Stretch",
           "sound": "hamstring_stretch.mp3",
@@ -251,7 +267,10 @@
         },
         {
           "id": 10,
-          "name": "Squat Side Kick",
+          "name": {
+            "en_GB": "Squat Side Kick",
+            "ru_RU": "Приседания и подъём ноги в сторону"
+          },
           "image": "squat_side_kick.png",
           "image_alt": "Squat Side Kick",
           "sound": "squat_side_kick.mp3",
@@ -260,7 +279,10 @@
         },
         {
           "id": 11,
-          "name": "Plank",
+          "name": {
+            "en_GB": "Plank",
+            "ru_RU": "Планка"
+          },
           "image": "plank.png",
           "image_alt": "Plank",
           "sound": "plank.mp3",
@@ -269,7 +291,10 @@
         },
         {
           "id": 12,
-          "name": "Bridge",
+          "name": {
+            "en_GB": "Bridge",
+            "ru_RU": "Мостик"
+          },
           "image": "bridge.png",
           "image_alt": "Bridge",
           "sound": "bridge.mp3",
