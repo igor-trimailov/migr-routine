@@ -39,7 +39,7 @@
           "id": 3,
           "name": {
             "en_GB": "Grip Squeeze (Right)",
-            "ru_RU": "Сжимание кулака (Правого)"
+            "ru_RU": "Сжатие правого кулака"
           },
           "image": "grip_squeeze.png",
           "image_alt": "Grip Squeeze",
@@ -51,7 +51,7 @@
           "id": 4,
           "name": {
             "en_GB": "Grip Squeeze (Left)",
-            "ru_RU": "Сжимание кулака (Левого)"
+            "ru_RU": "Сжатие левого кулака"
           },
           "image": "grip_squeeze.png",
           "image_alt": "Grip Squeeze",
@@ -63,7 +63,7 @@
           "id": 5,
           "name": {
             "en_GB": "Forearm Pronation and Supination (Left)",
-            "ru_RU": "Вращение запястья с гантелей (Левого)"
+            "ru_RU": "Вращение левого запястья с гантелей"
           },
           "image": "forearm_pronation_and_supination.png",
           "image_alt": "Forearm Pronation and Supination",
@@ -75,7 +75,7 @@
           "id": 6,
           "name": {
             "en_GB": "Forearm Pronation and Supination (Right)",
-            "ru_RU": "Вращение запястья с гантелей (Правого)"
+            "ru_RU": "Вращение правого запястья с гантелей"
           },
           "image": "forearm_pronation_and_supination.png",
           "image_alt": "Forearm Pronation and Supination",
@@ -243,10 +243,9 @@
         {
           "id": 8,
           "name": {
-            "en_GB": "Hamstring Stretch (Left)",
-            "ru_RU": "Растяжка подколенных сухожилий (Левогой ноги)"
+            "en_GB": "Hamstring Stretch (Right)",
+            "ru_RU": "Растяжка подколенных сухожилий (Паравой ноги)"
           },
-          
           "image": "hamstring_stretch.png",
           "image_alt": "Hamstring Stretch",
           "sound": "hamstring_stretch.mp3",
@@ -256,15 +255,17 @@
         {
           "id": 9,
           "name": {
-            "en_GB": "Hamstring Stretch (Right)",
-            "ru_RU": "Растяжка подколенных сухожилий (Паравой ноги)"
+            "en_GB": "Hamstring Stretch (Left)",
+            "ru_RU": "Растяжка подколенных сухожилий (Левогой ноги)"
           },
+          
           "image": "hamstring_stretch.png",
           "image_alt": "Hamstring Stretch",
           "sound": "hamstring_stretch.mp3",
           "duration": 45,
           "order": 9
         },
+        
         {
           "id": 10,
           "name": {
