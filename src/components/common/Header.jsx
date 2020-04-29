@@ -9,6 +9,8 @@ function LocaleSwitcher({ actions, locales }) {
     <div className="locale-switcher">
       <OverlayTrigger
         placement="left"
+        trigger="click"
+        rootClose
         overlay={
           <Popover id={'popover-locale'}>
             <Popover.Content>
@@ -17,9 +19,8 @@ function LocaleSwitcher({ actions, locales }) {
                   <div
                     className="locale-switcher__locale"
                     key={`locale-${locale.code}`}
-                    onClick={(e) => {
-                      e.preventDefault()
-                      e.stopPropagation()
+                    onClick={() => {
+                      document.body.click()
                       actions.switchLocale(locale.code)
                     }}
                   >
@@ -64,7 +65,18 @@ function Header(props) {
           <Translate lt="header.nav.about" />
         </div>
         <div className="header__nav-item">
+<<<<<<< Updated upstream
           <Translate lt="header.nav.login" />
+=======
+          <Link
+            to={{
+              pathname: `${process.env.PUBLIC_URL}/account/login`,
+              state: { background: location },
+            }}
+          >
+            Login
+          </Link>
+>>>>>>> Stashed changes
         </div>
         <div className="header__nav-item">
           <LocaleSwitcher {...props} />
