@@ -27,20 +27,24 @@ export default function RouterSwitch() {
     <div>
       <Switch location={background || location}>
         <Route
+          exact
           path={process.env.PUBLIC_URL + '/routine/:routineId'}
           component={Exercises}
         />
         <Route
+          exact
           path={
             process.env.PUBLIC_URL + '/routine/:routineId/exercise/:exerciseId'
           }
           component={Exercise}
         />
         <Route
+          exact
           path={process.env.PUBLIC_URL + '/finished'}
           component={ExerciseFinished}
         />
         <Route
+          exact
           path={process.env.PUBLIC_URL + '/account/login'}
           component={Routines}
         />
@@ -48,6 +52,7 @@ export default function RouterSwitch() {
       </Switch>
       {background && (
         <Route
+          exact
           path={process.env.PUBLIC_URL + '/account/:subroute'}
           children={<Modal />}
         />
