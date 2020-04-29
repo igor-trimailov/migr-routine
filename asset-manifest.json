@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/fizz-cult-app/static/css/main.62ed2d9a.chunk.css",
-    "main.js": "/fizz-cult-app/static/js/main.bc285f48.chunk.js",
-    "main.js.map": "/fizz-cult-app/static/js/main.bc285f48.chunk.js.map",
+    "main.css": "/fizz-cult-app/static/css/main.29f7b913.chunk.css",
+    "main.js": "/fizz-cult-app/static/js/main.fba194b1.chunk.js",
+    "main.js.map": "/fizz-cult-app/static/js/main.fba194b1.chunk.js.map",
     "runtime-main.js": "/fizz-cult-app/static/js/runtime-main.08cdec17.js",
     "runtime-main.js.map": "/fizz-cult-app/static/js/runtime-main.08cdec17.js.map",
     "static/css/2.f524894f.chunk.css": "/fizz-cult-app/static/css/2.f524894f.chunk.css",
-    "static/js/2.ac6ea34d.chunk.js": "/fizz-cult-app/static/js/2.ac6ea34d.chunk.js",
-    "static/js/2.ac6ea34d.chunk.js.map": "/fizz-cult-app/static/js/2.ac6ea34d.chunk.js.map",
+    "static/js/2.630954d5.chunk.js": "/fizz-cult-app/static/js/2.630954d5.chunk.js",
+    "static/js/2.630954d5.chunk.js.map": "/fizz-cult-app/static/js/2.630954d5.chunk.js.map",
     "index.html": "/fizz-cult-app/index.html",
-    "precache-manifest.aa20563988abcba6ba8ff14058f0f057.js": "/fizz-cult-app/precache-manifest.aa20563988abcba6ba8ff14058f0f057.js",
+    "precache-manifest.856bf0a74d8f3b5e4fde1ef7ca240fcb.js": "/fizz-cult-app/precache-manifest.856bf0a74d8f3b5e4fde1ef7ca240fcb.js",
     "service-worker.js": "/fizz-cult-app/service-worker.js",
     "static/css/2.f524894f.chunk.css.map": "/fizz-cult-app/static/css/2.f524894f.chunk.css.map",
-    "static/css/main.62ed2d9a.chunk.css.map": "/fizz-cult-app/static/css/main.62ed2d9a.chunk.css.map",
-    "static/js/2.ac6ea34d.chunk.js.LICENSE.txt": "/fizz-cult-app/static/js/2.ac6ea34d.chunk.js.LICENSE.txt",
+    "static/css/main.29f7b913.chunk.css.map": "/fizz-cult-app/static/css/main.29f7b913.chunk.css.map",
+    "static/js/2.630954d5.chunk.js.LICENSE.txt": "/fizz-cult-app/static/js/2.630954d5.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/fizz-cult-app/static/media/icomoon.72c742bc.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.08cdec17.js",
     "static/css/2.f524894f.chunk.css",
-    "static/js/2.ac6ea34d.chunk.js",
-    "static/css/main.62ed2d9a.chunk.css",
-    "static/js/main.bc285f48.chunk.js"
+    "static/js/2.630954d5.chunk.js",
+    "static/css/main.29f7b913.chunk.css",
+    "static/js/main.fba194b1.chunk.js"
   ]
 }
