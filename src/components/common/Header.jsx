@@ -65,9 +65,6 @@ function Header(props) {
           <Translate lt="header.nav.about" />
         </div>
         <div className="header__nav-item">
-<<<<<<< Updated upstream
-          <Translate lt="header.nav.login" />
-=======
           <Link
             to={{
               pathname: `${process.env.PUBLIC_URL}/account/login`,
@@ -76,7 +73,6 @@ function Header(props) {
           >
             Login
           </Link>
->>>>>>> Stashed changes
         </div>
         <div className="header__nav-item">
           <LocaleSwitcher {...props} />
