@@ -12,10 +12,10 @@ const defaultLocaleState = config.availableLocales.map((locale) => {
 function locales(state = defaultLocaleState, action) {
   switch (action.type) {
     case ActionTypes.SWITCH_LOCALE:
-      return state.map(locale => {
+      return state.map((locale) => {
         return {
           ...locale,
-          selected: locale.code === action.payload
+          selected: locale.code === action.payload,
         }
       })
     default:
@@ -91,4 +91,9 @@ function exercises(state = {}, action) {
   }
 }
 
-export default combineReducers({ locales, exercise, exercises, routines })
+export default combineReducers({
+  locales,
+  exercise,
+  exercises,
+  routines,
+})
