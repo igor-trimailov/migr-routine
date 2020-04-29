@@ -1,6 +1,7 @@
 import React from 'react'
 import Translate from '../common/Translate'
 import { OverlayTrigger, Popover } from 'react-bootstrap'
+import { useLocation, Link } from 'react-router-dom'
 
 function LocaleSwitcher({ actions, locales }) {
   const selectedLocale = locales.find((locale) => locale.selected)
@@ -55,6 +56,8 @@ function LocaleSwitcher({ actions, locales }) {
 }
 
 function Header(props) {
+  const location = useLocation()
+
   return (
     <div className="header">
       <div className="header__title">
