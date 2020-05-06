@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/fizz-cult-app/precache-manifest.5a4b201f39d59b2e39d59e0adc9e80d8.js"
+  "/fizz-cult-app/precache-manifest.426b2ff600504b10aa9d12b44032af51.js"
 );
 
 self.addEventListener('message', (event) => {
