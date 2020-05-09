@@ -1,88 +1,23 @@
 import React from 'react'
-import Translate from '../common/Translate'
-import { OverlayTrigger, Popover } from 'react-bootstrap'
-import { useLocation, Link } from 'react-router-dom'
+import { Image } from 'react-bootstrap'
 
-function LocaleSwitcher({ actions, locales }) {
-  const selectedLocale = locales.find((locale) => locale.selected)
-
+function Header({ heading, text, image, children }) {
   return (
-    <div className="locale-switcher">
-      <OverlayTrigger
-        placement="left"
-        trigger="click"
-        rootClose
-        overlay={
-          <Popover id={'popover-locale'}>
-            <Popover.Content>
-              <div className="locale-switcher__locale-list">
-                {locales.map((locale) => (
-                  <div
-                    className="locale-switcher__locale"
-                    key={`locale-${locale.code}`}
-                    onClick={() => {
-                      document.body.click()
-                      actions.switchLocale(locale.code)
-                    }}
-                  >
-                    <div className="locale-switcher__locale-flag">
-                      <img
-                        src={
-                          process.env.PUBLIC_URL +
-                          `/images/flag/${locale.code}.png`
-                        }
-                        alt={locale.name}
-                      />
-                    </div>
-                    <div className="locale-switcher__locale-name">
-                      {locale.name}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Popover.Content>
-          </Popover>
-        }
-      >
-        <img
-          src={
-            process.env.PUBLIC_URL + `/images/flag/${selectedLocale.code}.png`
-          }
-          alt={selectedLocale.name}
-        />
-      </OverlayTrigger>
-    </div>
-  )
-}
-
-function Header(props) {
-  const location = useLocation()
-
-  return (
-    <div className="header">
-      <div className="header__title">
-        <Translate lt="header.title" />
-      </div>
-      <div className="header__nav">
-        <div className="header__nav-item">
-          <Translate lt="header.nav.about" />
+    <div className="fc-header">
+      <div className="fc-header__container">
+        <div className="fc-header__text">
+          <div className="fc-header__text-heading">{heading}</div>
+          <div className="fc-header__text-text">{text}</div>
         </div>
-        <div className="header__nav-item">
-          <Link
-            to={{
-              pathname: `${process.env.PUBLIC_URL}/account/login`,
-              state: { background: location },
-            }}
-          >
-            Login
-          </Link>
-        </div>
-        <div className="header__nav-item">
-          <LocaleSwitcher {...props} />
-        </div>
+        {image && (
+          <div className="fc-header__image">
+            <Image src={process.env.PUBLIC_URL + '/images/' + image} fluid />
+          </div>
+        )}
+        <div className="fc-header__children">{children}</div>
       </div>
     </div>
   )
 }
 
-export default React.memo(Header)
+export default Header

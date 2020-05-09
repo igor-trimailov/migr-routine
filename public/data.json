@@ -10,6 +10,10 @@
         "en_GB": "Routine designed specifically for prople with rheumatoid arthritis, making sure there are no exercises that might put unnecessary pressure on the joints. Before starting these exercises, make sure to talk to your doctor",
         "ru_RU": "Упражнения преднозначенные для людей с ревматоидным артритом, которые не оказывают ненужное давление на суставы. Прежде чем начать выполнение упражнений необходимо посоветоваться с врачом!"
       },
+      "image": {
+        "src": "ra.png",
+        "alt": "RA routine"
+      },
       "exercises": [
         {
           "id": 1,
@@ -154,6 +158,10 @@
       "description": {
         "en_GB": "Full body exercise routine for your daily needs",
         "ru_RU": "Эффективная зарядка для всего тела в домашних условиях"
+      },
+      "image": {
+        "src": "full_body.png",
+        "alt": "Full body routine"
       },
       "exercises": [
         {

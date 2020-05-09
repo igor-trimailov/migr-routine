@@ -7,7 +7,13 @@ import { handleDragEnd } from '../../utils'
 
 import ExerciseListItem from './ExerciseListItem'
 
-function ExerciseList({ actions, routineId, exercises, onExerciseClick, locale }) {
+function ExerciseList({
+  actions,
+  routineId,
+  exercises,
+  onExerciseClick,
+  locale,
+}) {
   const setExercisesCallback = (exercises) => {
     actions.orderExercises({ routineId, exercises })
   }
@@ -20,7 +26,11 @@ function ExerciseList({ actions, routineId, exercises, onExerciseClick, locale }
     <DragDropContext onDragEnd={onDragEnd}>
       <Droppable droppableId="list">
         {(provided) => (
-          <ListGroup ref={provided.innerRef} {...provided.droppableProps}>
+          <ListGroup
+            className="exercise-list"
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+          >
             {exercises.map((exercise, index) => (
               <ExerciseListItem
                 {...{

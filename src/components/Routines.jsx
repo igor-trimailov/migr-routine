@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
-import { Container, CardGroup, Jumbotron, Image } from 'react-bootstrap'
 
 import Routine from './routine/Routine'
 import Translate from '../components/common/Translate'
+import { Header } from './common'
 
 import { handleDragEnd } from '../utils'
 
@@ -29,27 +29,19 @@ function Routines({ actions, routines }) {
 
   return (
     <div className="routines">
-      <Jumbotron fluid>
-        <Container>
-          <div className="routines__jumbotron">
-            <div className="routines__jumbotron-text">
-              <h2>
-                <Translate lt="routines.jumbotron.h1" />
-              </h2>
-              <p>
-                <Translate lt="routines.jumbotron.p" />
-              </p>
-            </div>
-            <div className="routines__jumbotron-image">
-              <Image src={process.env.PUBLIC_URL + '/images/logo.png'} fluid />
-            </div>
-          </div>
-        </Container>
-      </Jumbotron>
+      <Header
+        heading={<Translate lt="routines.header.heading" />}
+        text={<Translate lt="routines.header.text" />}
+        image="logo.png"
+      />
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="list">
           {(provided) => (
-            <CardGroup ref={provided.innerRef} {...provided.droppableProps}>
+            <div
+              className="routines-list"
+              ref={provided.innerRef}
+              {...provided.droppableProps}
+            >
               {routines.map((routine, index) => (
                 <Routine
                   routine={routine}
@@ -59,7 +51,7 @@ function Routines({ actions, routines }) {
                 />
               ))}
               {provided.placeholder}
-            </CardGroup>
+            </div>
           )}
         </Droppable>
       </DragDropContext>

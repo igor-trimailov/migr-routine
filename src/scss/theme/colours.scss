@@ -1,6 +1,6 @@
 // Theme colours
-$primary: #20c1e9;
-$secondary: #26ea8d;
+$primary: #eaeaea;
+$secondary: #ED595F;
 
 $primary-gradient: linear-gradient(
   75deg,
@@ -8,10 +8,18 @@ $primary-gradient: linear-gradient(
   rgba(38, 234, 141, 1) 100%
 );
 
+$jumbotron-background: rgb(211, 209, 210);
+$jumbotron-gradient: linear-gradient(
+  180deg,
+  rgba(211, 209, 210, 1) 0%,
+  rgba(229, 229, 228, 1) 80%,
+  rgba(250, 247, 253, 1) 100%
+);
+
 $primary-text: #404040;
 
 // Bootstrap theme colours
 $theme-colors: (
-  'primary': #20c1e9,
-  'secondary': #26ea8d,
+  'primary': #eaeaea,
+  'secondary': #ED595F,
 );

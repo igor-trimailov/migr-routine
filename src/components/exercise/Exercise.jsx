@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
-import { Redirect } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import ExerciseControls from './ExerciseControls'
-import { Footer } from '../common'
 import Translate from '../common/Translate'
 
 import { playSound } from '../../utils'
@@ -12,7 +11,13 @@ import { get } from 'lodash'
 export default function Exercise({ exercise, nextExercise, actions }) {
   const [seconds, setSeconds] = useState(get(exercise, 'duration', 30))
   const [play, setPlay] = useState(false)
-  const [soundPlaying, setSoundPlaying] = useState(false)
+  const [soundPlaying, setSoundPlaying] = useState(true)
+  const history = useHistory()
+
+  const goBack = () => {
+    actions.finishExercise()
+    history.push(`${process.env.PUBLIC_URL}/finished`)
+  }
 
   const startExercise = useCallback(
     (exercise) => {
@@ -50,7 +55,10 @@ export default function Exercise({ exercise, nextExercise, actions }) {
       setSoundPlaying(true)
       playSound(exercise.sound, () => {
         setPlay(true)
-        setSoundPlaying(false)
+        // delay the activation of controlls a bit
+        setTimeout(() => {
+          setSoundPlaying(false)
+        }, 1000)
       })
     }
 
@@ -74,13 +82,15 @@ export default function Exercise({ exercise, nextExercise, actions }) {
 
   if (!exercise) {
     // in case the exercise was not found, redirect to main page
-    return <Redirect to={`${process.env.PUBLIC_URL}/finished`} />
+    goBack()
+    return null
   }
 
   return (
     <div className="exercise">
       <div className="exercise__header">
         <Translate item={exercise.name} />
+        <div className="exercise__header-icon" onClick={goBack}></div>
       </div>
       <div className="exercise__body">
         <div className="exercise__image">
@@ -107,7 +117,7 @@ export default function Exercise({ exercise, nextExercise, actions }) {
           />
         </div>
       </div>
-      <Footer>
+      <div className="exercise__footer">
         <ExerciseControls
           {...{
             play,
@@ -117,7 +127,7 @@ export default function Exercise({ exercise, nextExercise, actions }) {
             disabled: soundPlaying,
           }}
         />
-      </Footer>
+      </div>
     </div>
   )
 }

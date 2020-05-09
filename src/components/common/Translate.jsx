@@ -12,9 +12,9 @@ const translations = {
       },
     },
     routines: {
-      jumbotron: {
-        h1: 'Start your exercise by selecting one of the routines!',
-        p:
+      header: {
+        heading: 'Start your exercise by selecting one of the routines!',
+        text:
           'Select one of the available routines and start your exercise! More routines will be available soonish',
       },
       routine: {
@@ -24,9 +24,9 @@ const translations = {
       },
     },
     exercises: {
-      jumbotron: {
-        h1: 'Start your exercise by pressing start button!',
-        p:
+      header: {
+        heading: 'Start your exercise by pressing start button!',
+        text:
           'You can change the order of exercises by dragging them around. There will be a 5s break between exercises. Good Luck!',
         button: 'Start exercise!',
       },
@@ -51,9 +51,9 @@ const translations = {
       },
     },
     routines: {
-      jumbotron: {
-        h1: 'Начни упражнения выбрав один из представленных режимов!',
-        p:
+      header: {
+        heading: 'Начни упражнения выбрав один из представленных режимов!',
+        text:
           'Чтобы начать упражнения, выбери один из представленных ниже режимов',
       },
       routine: {
@@ -63,9 +63,9 @@ const translations = {
       },
     },
     exercises: {
-      jumbotron: {
-        h1: 'Начни зарядку нажав кнопку старт!',
-        p:
+      header: {
+        heading: 'Начни зарядку нажав кнопку старт!',
+        text:
           'Порядок упражнений можно изменить перетаскивая их пальцем. Между упражнениями будет 5-секундный перерыв. Физкульт привет!',
         button: 'Старт!',
       },

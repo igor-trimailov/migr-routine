@@ -1,11 +1,12 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 
-import { Container, Jumbotron, Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 import { getAudioManager } from '../utils'
 import Translate from './common/Translate'
 import ExerciseList from './exercise/ExerciseList'
+import { Header } from './common'
 
 function Exercises(props) {
   const { exercises, routineId, actions, locale } = props
@@ -28,21 +29,15 @@ function Exercises(props) {
 
   return (
     <div className="exercises">
-      <Jumbotron fluid>
-        <Container>
-          <h1>
-            <Translate lt="exercises.jumbotron.h1" />
-          </h1>
-          <p>
-            <Translate lt="exercises.jumbotron.p" />
-          </p>
-          <p>
-            <Button variant="secondary" onClick={startExercise}>
-              <Translate lt="exercises.jumbotron.button" />
-            </Button>
-          </p>
-        </Container>
-      </Jumbotron>
+      <Header
+        heading={<Translate lt="exercises.header.heading" />}
+        text={<Translate lt="exercises.header.text" />}
+        image="logo.png"
+      >
+        <Button variant="secondary" onClick={startExercise}>
+          <Translate lt="exercises.header.button" />
+        </Button>
+      </Header>
       <ExerciseList {...{ actions, exercises, routineId, locale }} />
     </div>
   )

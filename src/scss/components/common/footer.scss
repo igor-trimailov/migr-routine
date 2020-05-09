@@ -1,11 +1,58 @@
 .footer {
-  display: flex;
-  align-items: center;
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  z-index: 150;
-  height: 60px;
-  width: 100%;
-  background: $primary;
+  background: #202124;
+  color: #cccdcf;
+
+  &__container {
+    padding: 15px;
+  }
+
+  &__header {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 30px 0 20px 0;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
+    a {
+      padding: 0 10px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  &__social-item {
+    &::after {
+      color: #404348;
+      font-size: 24px;
+      padding: 10px;
+    }
+    &--twitter {
+      @include icon('twitter');
+    }
+    &--facebook {
+      @include icon('facebook');
+    }
+    &--instagram {
+      @include icon('instragram');
+    }
+    &--linkedin {
+      @include icon('linkedin');
+    }
+  }
+
+  &__copyright {
+    font-size: 12px;
+    text-align: center;
+    color: #404348;
+  }
 }

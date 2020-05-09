@@ -1,1 +1,25 @@
-@import "./icomoon.scss"
+@import './icomoon.scss';
+
+@mixin breakpoint-up($type) {
+  $min-width: map-get(
+    (
+      'sm': '480px',
+      'm': '800px',
+      'l': '1000px',
+      'xl': '1600px',
+    ),
+    $type
+  );
+
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media not all and (pointer: coarse) {
+    &:hover {
+      @content;
+    }
+  }
+}

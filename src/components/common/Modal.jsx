@@ -2,7 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { useHistory } from 'react-router-dom'
 
-function Modal() {
+function LoginModal() {
+  return <div className="login-form"></div>
+}
+
+function Modal({ config, subroute }) {
   const history = useHistory()
 
   const back = (e) => {
@@ -13,7 +17,7 @@ function Modal() {
   return ReactDOM.createPortal(
     <div className="fc-modal__wrapper" onClick={back}>
       <div className="fc-modal">
-        <h1>I am a Modal</h1>
+        <h1>Login not available yet: {subroute}</h1>
         <button type="button" onClick={back}>
           Close
         </button>

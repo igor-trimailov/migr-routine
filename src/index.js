@@ -1,4 +1,4 @@
-import React, { ReactFragment } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import * as serviceWorker from './serviceWorker'
 import configureStore from './store'
@@ -12,9 +12,8 @@ import {
 } from 'react-router-dom'
 
 import './scss/index.scss'
-import { Exercise, Exercises, Routines, Header } from './containers'
-import { ScrollToTop } from './components/common'
-import Modal from './components/common/Modal'
+import { Exercise, Exercises, Routines, TopNav, Modal } from './containers'
+import { ScrollToTop, Footer } from './components/common'
 import ExerciseFinished from './components/exercise/ExerciseFinished'
 
 const { store, persistor } = configureStore()
@@ -24,7 +23,7 @@ export default function RouterSwitch() {
   const background = location.state && location.state.background
 
   return (
-    <div>
+    <div className="body">
       <Switch location={background || location}>
         <Route
           exact
@@ -54,7 +53,7 @@ export default function RouterSwitch() {
         <Route
           exact
           path={process.env.PUBLIC_URL + '/account/:subroute'}
-          children={<Modal />}
+          component={Modal}
         />
       )}
     </div>
@@ -65,9 +64,10 @@ ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <Router onUpdate={() => window.scrollTo(0, 0)}>
-        <Header />
+        <TopNav />
         <ScrollToTop />
         <RouterSwitch />
+        <Footer />
       </Router>
     </PersistGate>
   </Provider>,

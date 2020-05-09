@@ -5,3 +5,17 @@
 @import './fonts';
 @import './mixins';
 @import './components';
+
+html, body, #root {
+    height: 100%;
+    overflow: auto;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+.body {
+    flex-grow: 1;
+}
