@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1075cdd742ccb24d84bfb07192db64d3",
+    "revision": "4652ce15f5c7b8cfa2eb67c474edb5d8",
     "url": "/fizz-cult-app/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fizz-cult-app/static/css/2.f524894f.chunk.css"
   },
   {
-    "revision": "9411353ab84b5b94346f",
-    "url": "/fizz-cult-app/static/css/main.2497ee71.chunk.css"
+    "revision": "4a0d4698aef5758044f5",
+    "url": "/fizz-cult-app/static/css/main.b7a21cb6.chunk.css"
   },
   {
     "revision": "11270f29a8cd34b7d76d",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fizz-cult-app/static/js/2.e917e8fa.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9411353ab84b5b94346f",
-    "url": "/fizz-cult-app/static/js/main.e3fd9303.chunk.js"
+    "revision": "4a0d4698aef5758044f5",
+    "url": "/fizz-cult-app/static/js/main.a0e175ed.chunk.js"
   },
   {
     "revision": "1e5cad9a5b4354ed7e32",
