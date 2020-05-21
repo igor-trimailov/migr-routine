@@ -60,3 +60,10 @@ export function finishExercise() {
     type: ActionTypes.FINISH_EXERCISE,
   }
 }
+
+export function apiError(error) {
+  return {
+    type: ActionTypes.API_ERROR,
+    payload: error
+  }
+}

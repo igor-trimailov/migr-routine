@@ -7,7 +7,7 @@ import {
   ButtonGroup,
 } from 'react-bootstrap'
 
-import Translate from '../common/Translate'
+import { Translate } from '../common/Translate'
 
 function ExerciseListItem({ actions, routineId, exercise, index, locale }) {
   return (

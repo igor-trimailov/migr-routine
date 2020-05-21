@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 
 import { getAudioManager } from '../utils'
-import Translate from './common/Translate'
+import { Translate } from './common/Translate'
 import ExerciseList from './exercise/ExerciseList'
 import { Header } from './common'
 

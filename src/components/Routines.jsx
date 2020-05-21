@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 
 import Routine from './routine/Routine'
-import Translate from '../components/common/Translate'
+import { Translate } from './common/Translate'
 import { Header } from './common'
 
 import { handleDragEnd } from '../utils'

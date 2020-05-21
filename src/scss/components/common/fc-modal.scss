@@ -1,0 +1,149 @@
+.fc-modal {
+  background-color: #fefefe;
+  border-radius: 10px;
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 20px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+
+  &__wrapper {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__close {
+    @include icon(circle-close);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #404040;
+
+    @include hover {
+      color: $secondary;
+    }
+  }
+}
+
+.fc-form {
+  display: flex;
+  flex-direction: column;
+  &__header {
+    text-align: center;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    height: 400px;
+  }
+  &__label {
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 25px auto 0;
+    text-align: center;
+    color: #cfcfcf;
+    overflow: hidden;
+    flex: 1;
+    opacity: 1;
+
+    &--hidden {
+      flex: 0;
+      opacity: 0;
+    }
+
+    // fancy transitions
+    &-enter {
+      transition: all 0.3s ease-in-out;
+      height: auto;
+      flex: 1;
+      opacity: 1;
+    }
+    &-exit {
+      flex: 0;
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    text-align: center;
+  }
+
+  &__reminder {
+    font-size: 12px;
+  }
+
+  &__button {
+    margin: 50px auto 20px;
+    width: 250px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    color: white;
+    background: $secondary;
+    padding: 10px 0;
+    outline-color: white;
+
+    @include hover {
+      background: darken($secondary, 10%);
+      color: darken(white, 10%);
+    }
+  }
+
+  &__link {
+    display: inline;
+    font-weight: 700;
+    color: $secondary;
+    border-bottom: 2px solid $secondary;
+    cursor: pointer;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &__reminder {
+    color: #404040;
+    font-weight: 500;
+
+    @include hover {
+      color: darken(#404040, 10%);
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+
+  &__password-info {
+    @include icon(info);
+
+    line-height: 18px;
+    
+    font-size: 16px;
+    color: blue;
+    padding-left: 10px;
+  }
+}

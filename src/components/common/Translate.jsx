@@ -83,6 +83,12 @@ const translations = {
   },
 }
 
+function TL(lt) {
+  const selectedLocale = window.__FizzAppConfig__.locale || 'en_GB'
+  
+  return get(translations, `${selectedLocale}.${lt}`, 'Not defined')
+}
+
 function Translate(props) {
   const locales = useSelector((state) => state.locales)
   const selectedLocale = locales.find((locale) => locale.selected)
@@ -104,4 +110,4 @@ function Translate(props) {
   return <span>Undefined</span>
 }
 
-export default Translate
+export { Translate }

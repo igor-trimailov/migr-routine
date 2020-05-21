@@ -1,5 +1,5 @@
 import React from 'react'
-import Translate from './Translate'
+import { Translate } from './Translate'
 import { OverlayTrigger, Popover } from 'react-bootstrap'
 import { useLocation, Link } from 'react-router-dom'
 

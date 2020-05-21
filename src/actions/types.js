@@ -15,4 +15,6 @@ export const ActionTypes = {
   STOP_EXERCISE: 'STOP_EXERCISE',
 
   SWITCH_LOCALE: 'SWITCH_LOCALE',
+
+  API_ERROR: 'API_ERROR',
 }

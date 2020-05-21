@@ -2,7 +2,7 @@ import React from 'react'
 import { Draggable } from 'react-beautiful-dnd'
 import { Button, Image } from 'react-bootstrap'
 
-import Translate from '../common/Translate'
+import { Translate } from '../common/Translate'
 
 function Routine({ routine, index, selectRoutine }) {
   const onSelectRoutine = () => {

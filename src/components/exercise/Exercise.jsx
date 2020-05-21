@@ -3,10 +3,72 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 import { useHistory } from 'react-router-dom'
 import ExerciseControls from './ExerciseControls'
-import Translate from '../common/Translate'
+import { Translate } from '../common/Translate'
+import Speech from 'speak-tts'
 
 import { playSound } from '../../utils'
 import { get } from 'lodash'
+
+function speak(textToSpeak, onStartCallback, onEndCallback) {
+  const speech = new Speech();
+  speech
+    .init({
+      volume: 0.7,
+      lang: "en-GB",
+      rate: 1,
+      pitch: 1,
+      voice: 'Google UK English Male',
+      //'splitSentences': false,
+      listeners: {
+        onvoiceschanged: voices => {
+          console.log("Voices changed", voices);
+        }
+      }
+    })
+    .then(data => {
+      console.log("Speech is ready", data);
+      speech
+      .speak({
+        text: textToSpeak,
+        queue: false,
+        listeners: {
+          onstart: () => {
+            onStartCallback()
+            console.log("Start utterance");
+          },
+          onend: () => {
+            onEndCallback()
+            console.log("End utterance");
+          },
+          onresume: () => {
+            console.log("Resume utterance");
+          },
+          onboundary: event => {
+            console.log(
+              event.name +
+                " boundary reached after " +
+                event.elapsedTime +
+                " milliseconds."
+            );
+          }
+        }
+      })
+      .then(data => {
+        console.log("Success !", data);
+      })
+      .catch(e => {
+        console.error("An error occurred :", e);
+      });
+    })
+    .catch(e => {
+      console.error("An error occured while initializing : ", e);
+    });
+
+  const text = speech.hasBrowserSupport()
+    ? "Hurray, your browser supports speech synthesis"
+    : "Your browser does NOT support speech synthesis. Try using Chrome of Safari instead !";
+    console.log(text)
+}
 
 export default function Exercise({ exercise, nextExercise, actions }) {
   const [seconds, setSeconds] = useState(get(exercise, 'duration', 30))
@@ -53,13 +115,24 @@ export default function Exercise({ exercise, nextExercise, actions }) {
 
     if (seconds === exercise.duration && !play) {
       setSoundPlaying(true)
-      playSound(exercise.sound, () => {
+
+      const foo = <Translate item={exercise.name} />
+
+      console.log(foo)
+
+      speak(<Translate item={exercise.name} />, () => {
+        setPlay(false)
+      }, () => {
         setPlay(true)
-        // delay the activation of controlls a bit
-        setTimeout(() => {
-          setSoundPlaying(false)
-        }, 1000)
+        setSoundPlaying(false)
       })
+      // playSound(exercise.sound, () => {
+      //   setPlay(true)
+      //   // delay the activation of controlls a bit
+      //   setTimeout(() => {
+      //     setSoundPlaying(false)
+      //   }, 1000)
+      // })
     }
 
     if (seconds === 0 && play) {

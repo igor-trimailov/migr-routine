@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom'
 
-import Translate from '../common/Translate'
+import { Translate } from '../common/Translate'
 
 function ExerciseFinished() {
   const history = useHistory()
