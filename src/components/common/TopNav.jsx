@@ -1,10 +1,20 @@
 import React from 'react'
-import { Translate } from './Translate'
 import { OverlayTrigger, Popover } from 'react-bootstrap'
 import { useLocation, Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { setLocale } from '../../utils'
+import config from '../../configuration'
 
-function LocaleSwitcher({ actions, locales }) {
-  const selectedLocale = locales.find((locale) => locale.selected)
+function LocaleSwitcher() {
+  const { i18n } = useTranslation()
+  const selectedLanguage = i18n.language
+  const availableLanguages = i18n.languages
+  const { locales } = config
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language)
+    setLocale(language)
+  }
 
   return (
     <div className="locale-switcher">
@@ -16,26 +26,26 @@ function LocaleSwitcher({ actions, locales }) {
           <Popover id={'popover-locale'}>
             <Popover.Content>
               <div className="locale-switcher__locale-list">
-                {locales.map((locale) => (
+                {availableLanguages.map((language) => (
                   <div
                     className="locale-switcher__locale"
-                    key={`locale-${locale.code}`}
+                    key={`locale-${language}`}
                     onClick={() => {
                       document.body.click()
-                      actions.switchLocale(locale.code)
+                      changeLanguage(language)
                     }}
                   >
                     <div className="locale-switcher__locale-flag">
                       <img
                         src={
                           process.env.PUBLIC_URL +
-                          `/images/flag/${locale.code}.png`
+                          `/images/flag/${language}.png`
                         }
-                        alt={locale.name}
+                        alt={language}
                       />
                     </div>
                     <div className="locale-switcher__locale-name">
-                      {locale.name}
+                      {locales[language].name}
                     </div>
                   </div>
                 ))}
@@ -44,12 +54,14 @@ function LocaleSwitcher({ actions, locales }) {
           </Popover>
         }
       >
-        <img
-          src={
-            process.env.PUBLIC_URL + `/images/flag/${selectedLocale.code}.png`
-          }
-          alt={selectedLocale.name}
-        />
+        {
+          <img
+            src={
+              process.env.PUBLIC_URL + `/images/flag/${selectedLanguage}.png`
+            }
+            alt={selectedLanguage}
+          />
+        }
       </OverlayTrigger>
     </div>
   )
@@ -57,17 +69,14 @@ function LocaleSwitcher({ actions, locales }) {
 
 function Header(props) {
   const location = useLocation()
+  const { t } = useTranslation()
 
   return (
     <div className="header">
       <div className="header__content">
-        <div className="header__title">
-          <Translate lt="header.title" />
-        </div>
+        <div className="header__title">{t('header.title')}</div>
         <div className="header__nav">
-          <div className="header__nav-item">
-            <Translate lt="header.nav.about" />
-          </div>
+          <div className="header__nav-item">{t('header.nav.about')}</div>
           <div className="header__nav-item">
             <Link
               to={{
@@ -75,7 +84,7 @@ function Header(props) {
                 state: { background: location },
               }}
             >
-              Login
+              {t('header.nav.login')}
             </Link>
           </div>
           <div className="header__nav-item">

@@ -1,19 +1,11 @@
 import React from 'react'
-
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { ListGroup } from 'react-bootstrap'
-
 import { handleDragEnd } from '../../utils'
 
 import ExerciseListItem from './ExerciseListItem'
 
-function ExerciseList({
-  actions,
-  routineId,
-  exercises,
-  onExerciseClick,
-  locale,
-}) {
+function ExerciseList({ actions, routineId, exercises, onExerciseClick }) {
   const setExercisesCallback = (exercises) => {
     actions.orderExercises({ routineId, exercises })
   }
@@ -35,7 +27,6 @@ function ExerciseList({
               <ExerciseListItem
                 {...{
                   actions,
-                  locale,
                   exercise,
                   routineId,
                   index,

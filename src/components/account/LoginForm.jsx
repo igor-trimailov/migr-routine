@@ -6,7 +6,7 @@ import { CSSTransition } from 'react-transition-group'
 
 function LoginForm(props) {
   const [signup, setSignup] = useState(false)
-  const [validationError, setValidationError] = useState('')
+  // const [validationError, setValidationError] = useState('')
 
   console.log(props)
 

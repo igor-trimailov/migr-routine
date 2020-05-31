@@ -1,85 +1,52 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 import { useHistory } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { useInterval, useSpeech } from '../../hooks'
 import ExerciseControls from './ExerciseControls'
-import { Translate } from '../common/Translate'
-import Speech from 'speak-tts'
 
 import { playSound } from '../../utils'
 import { get } from 'lodash'
-
-function speak(textToSpeak, onStartCallback, onEndCallback) {
-  const speech = new Speech();
-  speech
-    .init({
-      volume: 0.7,
-      lang: "en-GB",
-      rate: 1,
-      pitch: 1,
-      voice: 'Google UK English Male',
-      //'splitSentences': false,
-      listeners: {
-        onvoiceschanged: voices => {
-          console.log("Voices changed", voices);
-        }
-      }
-    })
-    .then(data => {
-      console.log("Speech is ready", data);
-      speech
-      .speak({
-        text: textToSpeak,
-        queue: false,
-        listeners: {
-          onstart: () => {
-            onStartCallback()
-            console.log("Start utterance");
-          },
-          onend: () => {
-            onEndCallback()
-            console.log("End utterance");
-          },
-          onresume: () => {
-            console.log("Resume utterance");
-          },
-          onboundary: event => {
-            console.log(
-              event.name +
-                " boundary reached after " +
-                event.elapsedTime +
-                " milliseconds."
-            );
-          }
-        }
-      })
-      .then(data => {
-        console.log("Success !", data);
-      })
-      .catch(e => {
-        console.error("An error occurred :", e);
-      });
-    })
-    .catch(e => {
-      console.error("An error occured while initializing : ", e);
-    });
-
-  const text = speech.hasBrowserSupport()
-    ? "Hurray, your browser supports speech synthesis"
-    : "Your browser does NOT support speech synthesis. Try using Chrome of Safari instead !";
-    console.log(text)
-}
 
 export default function Exercise({ exercise, nextExercise, actions }) {
   const [seconds, setSeconds] = useState(get(exercise, 'duration', 30))
   const [play, setPlay] = useState(false)
   const [soundPlaying, setSoundPlaying] = useState(true)
   const history = useHistory()
+  const { i18n } = useTranslation()
 
-  const goBack = () => {
-    actions.finishExercise()
-    history.push(`${process.env.PUBLIC_URL}/finished`)
-  }
+  const selectedLanguage = i18n.language
+  const exerciseName = exercise ? exercise.name[selectedLanguage] : ''
+
+  useInterval(
+    () => {
+      if (seconds === 1 && play) {
+        playSound('beep.wav', nextCallback, 2)
+      }
+
+      if (seconds < 6 && seconds !== 1) {
+        playSound('beep.wav')
+      }
+
+      setSeconds(seconds - 1)
+    },
+    play ? 1000 : null
+  )
+
+  useSpeech(
+    exerciseName,
+    () => {
+      setSoundPlaying(true)
+      setPlay(false)
+    },
+    () => {
+      setTimeout(() => {
+        setPlay(true)
+        setSoundPlaying(false)
+      }, 1000)
+    }
+  )
 
   const startExercise = useCallback(
     (exercise) => {
@@ -107,51 +74,11 @@ export default function Exercise({ exercise, nextExercise, actions }) {
     setPlay(!play)
   }, [play])
 
-  useEffect(() => {
-    // check if there is an exercise
-    if (!exercise) {
-      return
-    }
-
-    if (seconds === exercise.duration && !play) {
-      setSoundPlaying(true)
-
-      const foo = <Translate item={exercise.name} />
-
-      console.log(foo)
-
-      speak(<Translate item={exercise.name} />, () => {
-        setPlay(false)
-      }, () => {
-        setPlay(true)
-        setSoundPlaying(false)
-      })
-      // playSound(exercise.sound, () => {
-      //   setPlay(true)
-      //   // delay the activation of controlls a bit
-      //   setTimeout(() => {
-      //     setSoundPlaying(false)
-      //   }, 1000)
-      // })
-    }
-
-    if (seconds === 0 && play) {
-      playSound('beep.wav', nextCallback, 2)
-    }
-
-    if (seconds < 5 && seconds !== 0) {
-      playSound('beep.wav')
-    }
-
-    const interval = setInterval(() => {
-      if (play) {
-        setSeconds(seconds - 1)
-      }
-    }, 1000)
-
-    // clear interval on re-render
-    return () => clearInterval(interval)
-  }, [exercise, nextCallback, seconds, play])
+  const goBack = () => {
+    // cancel()
+    actions.finishExercise()
+    history.push(`${process.env.PUBLIC_URL}/finished`)
+  }
 
   if (!exercise) {
     // in case the exercise was not found, redirect to main page
@@ -162,7 +89,7 @@ export default function Exercise({ exercise, nextExercise, actions }) {
   return (
     <div className="exercise">
       <div className="exercise__header">
-        <Translate item={exercise.name} />
+        {exercise.name[selectedLanguage]}
         <div className="exercise__header-icon" onClick={goBack}></div>
       </div>
       <div className="exercise__body">

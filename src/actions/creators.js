@@ -48,13 +48,6 @@ export function setExerciseDuration(data) {
   }
 }
 
-export function switchLocale(data) {
-  return {
-    type: ActionTypes.SWITCH_LOCALE,
-    payload: data,
-  }
-}
-
 export function finishExercise() {
   return {
     type: ActionTypes.FINISH_EXERCISE,

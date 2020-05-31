@@ -1,27 +1,6 @@
 import { combineReducers } from 'redux'
 import { ActionTypes } from '../actions'
-import config from '../configuration'
 import { omit } from 'lodash'
-
-const defaultLocaleState = config.availableLocales.map((locale) => {
-  return {
-    ...locale,
-    selected: locale.code === config.defaultLocale,
-  }
-})
-function locales(state = defaultLocaleState, action) {
-  switch (action.type) {
-    case ActionTypes.SWITCH_LOCALE:
-      return state.map((locale) => {
-        return {
-          ...locale,
-          selected: locale.code === action.payload,
-        }
-      })
-    default:
-      return state
-  }
-}
 
 // keep track of previous exercise
 const defaultExerciseState = { previous: null, current: null }
@@ -92,7 +71,6 @@ function exercises(state = {}, action) {
 }
 
 export default combineReducers({
-  locales,
   exercise,
   exercises,
   routines,

@@ -3,7 +3,6 @@ import {
   receiveRoutinesSuccess,
   receiveRoutinesError,
   apiError,
-  ActionTypes,
 } from './index'
 
 export const requestRoutinesData = () => async (dispatch) => {

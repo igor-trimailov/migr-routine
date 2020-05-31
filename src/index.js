@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom'
 import * as serviceWorker from './serviceWorker'
 import configureStore from './store'
@@ -12,8 +12,9 @@ import {
 } from 'react-router-dom'
 
 import './scss/index.scss'
+import './i18next'
 import { Exercise, Exercises, Routines, TopNav, Modal } from './containers'
-import { ScrollToTop, Footer } from './components/common'
+import { ScrollToTop, Footer, Loader } from './components/common'
 import ExerciseFinished from './components/exercise/ExerciseFinished'
 
 const { store, persistor } = configureStore()
@@ -64,10 +65,12 @@ ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
       <Router onUpdate={() => window.scrollTo(0, 0)}>
-        <TopNav />
-        <ScrollToTop />
-        <RouterSwitch />
-        <Footer />
+        <Suspense fallback={<Loader />}>
+          <TopNav />
+          <ScrollToTop />
+          <RouterSwitch />
+          <Footer />
+        </Suspense>
       </Router>
     </PersistGate>
   </Provider>,

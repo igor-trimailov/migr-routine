@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
+import { useTranslation } from 'react-i18next'
 
 import Routine from './routine/Routine'
-import { Translate } from './common/Translate'
 import { Header } from './common'
 
 import { handleDragEnd } from '../utils'
 
 function Routines({ actions, routines }) {
   const history = useHistory()
+  const { t } = useTranslation()
 
   useEffect(() => {
     actions.requestRoutinesData()
@@ -30,8 +31,8 @@ function Routines({ actions, routines }) {
   return (
     <div className="routines">
       <Header
-        heading={<Translate lt="routines.header.heading" />}
-        text={<Translate lt="routines.header.text" />}
+        heading={t('routines.header.heading')}
+        text={t('routines.header.text')}
         image="logo.png"
       />
       <DragDropContext onDragEnd={onDragEnd}>
