@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/fizz-cult-app/static/css/main.b7a21cb6.chunk.css",
-    "main.js": "/fizz-cult-app/static/js/main.a0e175ed.chunk.js",
-    "main.js.map": "/fizz-cult-app/static/js/main.a0e175ed.chunk.js.map",
-    "runtime-main.js": "/fizz-cult-app/static/js/runtime-main.08cdec17.js",
-    "runtime-main.js.map": "/fizz-cult-app/static/js/runtime-main.08cdec17.js.map",
+    "main.css": "/fizz-cult-app/static/css/main.1a38a688.chunk.css",
+    "main.js": "/fizz-cult-app/static/js/main.68937019.chunk.js",
+    "main.js.map": "/fizz-cult-app/static/js/main.68937019.chunk.js.map",
+    "runtime-main.js": "/fizz-cult-app/static/js/runtime-main.8508668a.js",
+    "runtime-main.js.map": "/fizz-cult-app/static/js/runtime-main.8508668a.js.map",
     "static/css/2.f524894f.chunk.css": "/fizz-cult-app/static/css/2.f524894f.chunk.css",
-    "static/js/2.e917e8fa.chunk.js": "/fizz-cult-app/static/js/2.e917e8fa.chunk.js",
-    "static/js/2.e917e8fa.chunk.js.map": "/fizz-cult-app/static/js/2.e917e8fa.chunk.js.map",
+    "static/js/2.c1eeb1db.chunk.js": "/fizz-cult-app/static/js/2.c1eeb1db.chunk.js",
+    "static/js/2.c1eeb1db.chunk.js.map": "/fizz-cult-app/static/js/2.c1eeb1db.chunk.js.map",
     "index.html": "/fizz-cult-app/index.html",
-    "precache-manifest.53c6fb8639434dab6aa0d61d5c234dfe.js": "/fizz-cult-app/precache-manifest.53c6fb8639434dab6aa0d61d5c234dfe.js",
+    "precache-manifest.54983be12cd4160c85d1c999d5d03ead.js": "/fizz-cult-app/precache-manifest.54983be12cd4160c85d1c999d5d03ead.js",
     "service-worker.js": "/fizz-cult-app/service-worker.js",
     "static/css/2.f524894f.chunk.css.map": "/fizz-cult-app/static/css/2.f524894f.chunk.css.map",
-    "static/css/main.b7a21cb6.chunk.css.map": "/fizz-cult-app/static/css/main.b7a21cb6.chunk.css.map",
-    "static/js/2.e917e8fa.chunk.js.LICENSE.txt": "/fizz-cult-app/static/js/2.e917e8fa.chunk.js.LICENSE.txt",
+    "static/css/main.1a38a688.chunk.css.map": "/fizz-cult-app/static/css/main.1a38a688.chunk.css.map",
+    "static/js/2.c1eeb1db.chunk.js.LICENSE.txt": "/fizz-cult-app/static/js/2.c1eeb1db.chunk.js.LICENSE.txt",
+    "static/media/getFetch.cjs": "/fizz-cult-app/static/media/getFetch.5e98861f.cjs",
     "static/media/index.scss": "/fizz-cult-app/static/media/icomoon.72c742bc.ttf"
   },
   "entrypoints": [
-    "static/js/runtime-main.08cdec17.js",
+    "static/js/runtime-main.8508668a.js",
     "static/css/2.f524894f.chunk.css",
-    "static/js/2.e917e8fa.chunk.js",
-    "static/css/main.b7a21cb6.chunk.css",
-    "static/js/main.a0e175ed.chunk.js"
+    "static/js/2.c1eeb1db.chunk.js",
+    "static/css/main.1a38a688.chunk.css",
+    "static/js/main.68937019.chunk.js"
   ]
 }
