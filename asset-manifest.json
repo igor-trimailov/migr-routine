@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/fizz-cult-app/static/css/main.1a38a688.chunk.css",
-    "main.js": "/fizz-cult-app/static/js/main.984419cd.chunk.js",
-    "main.js.map": "/fizz-cult-app/static/js/main.984419cd.chunk.js.map",
+    "main.js": "/fizz-cult-app/static/js/main.4cb32ac2.chunk.js",
+    "main.js.map": "/fizz-cult-app/static/js/main.4cb32ac2.chunk.js.map",
     "runtime-main.js": "/fizz-cult-app/static/js/runtime-main.8508668a.js",
     "runtime-main.js.map": "/fizz-cult-app/static/js/runtime-main.8508668a.js.map",
     "static/css/2.f524894f.chunk.css": "/fizz-cult-app/static/css/2.f524894f.chunk.css",
     "static/js/2.15536a58.chunk.js": "/fizz-cult-app/static/js/2.15536a58.chunk.js",
     "static/js/2.15536a58.chunk.js.map": "/fizz-cult-app/static/js/2.15536a58.chunk.js.map",
     "index.html": "/fizz-cult-app/index.html",
-    "precache-manifest.4e694d9ec836afcb808fbe6bbbe7832e.js": "/fizz-cult-app/precache-manifest.4e694d9ec836afcb808fbe6bbbe7832e.js",
+    "precache-manifest.b2e0d255a384a1e7e5f277ae243f62e7.js": "/fizz-cult-app/precache-manifest.b2e0d255a384a1e7e5f277ae243f62e7.js",
     "service-worker.js": "/fizz-cult-app/service-worker.js",
     "static/css/2.f524894f.chunk.css.map": "/fizz-cult-app/static/css/2.f524894f.chunk.css.map",
     "static/css/main.1a38a688.chunk.css.map": "/fizz-cult-app/static/css/main.1a38a688.chunk.css.map",
@@ -22,6 +22,6 @@
     "static/css/2.f524894f.chunk.css",
     "static/js/2.15536a58.chunk.js",
     "static/css/main.1a38a688.chunk.css",
-    "static/js/main.984419cd.chunk.js"
+    "static/js/main.4cb32ac2.chunk.js"
   ]
 }
