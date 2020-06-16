@@ -6,6 +6,7 @@ import * as HeaderActions from '../actions'
 
 const mapStateToProps = (state) => {
   return {
+    user: state.user,
   }
 }
 

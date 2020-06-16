@@ -1,12 +1,21 @@
+import { ActionTypes } from '../actions'
+import { register, authenticate } from '../actions/api'
+
+// after the action?
 export default (store) => (next) => (action) => {
-  const res = next(action)
+  next(action)
   // const state = store.getState
-  // const dispatch = store.dispatch
+  const dispatch = store.dispatch
 
   switch (action.type) {
-    default:
-    // console.warn('Unrecognized action: ' + action.type)
-  }
+    case ActionTypes.ACCOUNT_REQUEST_REGISTER:
+      register(dispatch, action.payload)
+      break
+    case ActionTypes.ACCOUNT_REQUEST_LOGIN:
+      authenticate(dispatch, action.payload)
+      break
 
-  return res
+    default:
+    // console.log('Unrecognized action: ' + action.type)
+  }
 }

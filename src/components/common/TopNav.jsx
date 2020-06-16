@@ -1,10 +1,13 @@
 import React from 'react'
-import { OverlayTrigger, Popover } from 'react-bootstrap'
+import { OverlayTrigger, Popover, Dropdown } from 'react-bootstrap'
 import { useLocation, Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import isEmpty from 'lodash/isEmpty'
+
 import { setLocale } from '../../utils'
 import config from '../../configuration'
 
+// TODO: move switcher to it's own file
 function LocaleSwitcher() {
   const { i18n } = useTranslation()
   const selectedLanguage = i18n.language
@@ -70,6 +73,18 @@ function LocaleSwitcher() {
 function Header(props) {
   const location = useLocation()
   const { t } = useTranslation()
+  const { user, actions } = props
+
+  const CustomToggle = React.forwardRef(({ onClick }, ref) => (
+    <span
+      className="header__user"
+      ref={ref}
+      onClick={(e) => {
+        e.preventDefault()
+        onClick(e)
+      }}
+    ></span>
+  ))
 
   return (
     <div className="header">
@@ -78,14 +93,30 @@ function Header(props) {
         <div className="header__nav">
           <div className="header__nav-item">{t('header.nav.about')}</div>
           <div className="header__nav-item">
-            <Link
-              to={{
-                pathname: `${process.env.PUBLIC_URL}/account/login`,
-                state: { background: location },
-              }}
-            >
-              {t('header.nav.login')}
-            </Link>
+            {isEmpty(user) ? (
+              <Link
+                to={{
+                  pathname: `${process.env.PUBLIC_URL}/account/login`,
+                  state: { background: location },
+                }}
+              >
+                {t('header.nav.login')}
+              </Link>
+            ) : (
+              <Dropdown>
+                <Dropdown.Toggle as={CustomToggle}></Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item
+                    onClick={() => {
+                      actions.accountLogout()
+                    }}
+                  >
+                    Log out
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            )}
           </div>
           <div className="header__nav-item">
             <LocaleSwitcher {...props} />

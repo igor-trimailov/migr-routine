@@ -1,29 +1,41 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import classNames from 'classnames'
 import { OverlayTrigger, Tooltip } from 'react-bootstrap'
-
 import { CSSTransition } from 'react-transition-group'
 
 function LoginForm(props) {
   const [signup, setSignup] = useState(false)
-  // const [validationError, setValidationError] = useState('')
 
-  console.log(props)
-
-  const toggleSignup = () => {
+  const toggleSignup = useCallback(() => {
     setSignup(!signup)
+  }, [signup])
+
+  const { actions, isLoading, isLoggedIn, isRegistered, error } = props
+
+  // TODO: add pretty message and close the dialog in 3-ish seconds
+  if (isLoggedIn) {
+    return <div>Wellcome back... you...</div>
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (!e.target.checkValidity()) {
-      // set local validation error
-      // setValidationError('Invalid email and/or password')
-    } else {
-      // collect data, make a auth call
-      const data = new FormData(e.target)
+  // TODO: add pretty message and reditect to login popup
+  if (isRegistered) {
+    return <div>Registration was successfull!</div>
+  }
 
-      console.log(data)
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    if (!event.target.checkValidity()) {
+      // TODO: do some front-end validation that is not in the store?
+      console.log('validation error')
+    } else {
+      const formData = new FormData(event.target)
+
+      if (signup) {
+        actions.accountRequestRegister(formData)
+      } else {
+        actions.accountRequestLogin(formData)
+      }
     }
   }
 
@@ -57,65 +69,82 @@ function LoginForm(props) {
       <p>Password must have:</p>
       <ul>
         <li>length of at least 8 characters</li>
-        <li>at least two upper case letters</li>
-        <li>at least three lower case letters</li>
-        <li>at least one special case letter(\!\@\#\$\&)</li>
-        <li>at least two digits</li>
+        <li>at least one upper case letter</li>
+        <li>at least one lower case letters</li>
+        <li>at least one special characters</li>
+        <li>at least one digit</li>
       </ul>
     </Tooltip>
   )
+
+  const passwordAttr = {
+    ...(signup && {
+      pattern: '^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,32}$',
+    }),
+  }
+
+  const reminderClassNames = classNames('fc-form__reminder', {
+    'fc-form__reminder--disabled': isLoading,
+  })
 
   return (
     <div className="fc-form">
       <div className="fc-form__header">{header}</div>
 
-      <form className="fc-form__body" onSubmit={handleSubmit}>
-        <CSSTransition in={signup} timeout={300} classNames="fc-form__label">
-          <label className={nameCSS} htmlFor="fc-name">
-            Name
+      {error && <div className="fc-form__error">{error}</div>}
+
+      <form onSubmit={handleSubmit}>
+        <fieldset className="fc-form__body" disabled={isLoading}>
+          <CSSTransition in={signup} timeout={300} classNames="fc-form__label">
+            <label className={nameCSS} htmlFor="fc-name">
+              Name
+              <input
+                className="fc-form__input"
+                id="fc-name"
+                name="name"
+                type="text"
+                {...nameAttr}
+              />
+            </label>
+          </CSSTransition>
+
+          <label className="fc-form__label" htmlFor="fc-email">
+            Email
             <input
               className="fc-form__input"
-              id="fc-name"
-              type="text"
-              {...nameAttr}
+              id="fc-email"
+              name="email"
+              type="email"
+              required
             />
           </label>
-        </CSSTransition>
 
-        <label className="fc-form__label" htmlFor="fc-email">
-          Email
-          <input
-            className="fc-form__input"
-            id="fc-email"
-            type="email"
-            required
-          />
-        </label>
-
-        <label className="fc-form__label" htmlFor="fc-password">
-          Password
-          {signup && (
-            
+          <label className="fc-form__label" htmlFor="fc-password">
+            Password
+            {signup && (
               <OverlayTrigger placement="bottom" overlay={PasswordTooltip}>
                 <span className="fc-form__password-info" />
               </OverlayTrigger>
-          )}
-          <input
-            className="fc-form__input"
-            id="fc-password"
-            type="password"
-            pattern="^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$"
-            required
-          />
-        </label>
+            )}
+            <input
+              className="fc-form__input"
+              id="fc-password"
+              name="password"
+              type="password"
+              required
+              {...passwordAttr}
+            />
+          </label>
 
-        <input
-          type="submit"
-          className="fc-form__button"
-          value={signup ? 'Sign Up' : 'Sign In'}
-        />
+          <button type="submit" className="fc-form__button">
+            <span className="fc-form__button-text">
+              {isLoading ? 'Loading' : 'Sign in'}
+              {isLoading && <span className="dot-loader"></span>}
+            </span>
+          </button>
 
-        <p className="fc-form__reminder">Forgot password?</p>
+          <p className={reminderClassNames}>Forgot password?</p>
+        </fieldset>
       </form>
     </div>
   )

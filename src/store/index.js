@@ -12,7 +12,7 @@ import rootReducer from '../reducers'
 // store keys that are not that useful
 const persistConfig = {
   key: 'root',
-  whitelist: ['routines', 'exercises'],
+  whitelist: ['routines', 'exercises', 'user'],
   storage,
 }
 

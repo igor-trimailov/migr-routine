@@ -48,6 +48,8 @@
     justify-content: flex-start;
     text-align: center;
     height: 400px;
+    width: 60%;
+    margin: 0 auto;
   }
   &__label {
     display: block;
@@ -91,10 +93,6 @@
     text-align: center;
   }
 
-  &__reminder {
-    font-size: 12px;
-  }
-
   &__button {
     margin: 50px auto 20px;
     width: 250px;
@@ -110,6 +108,15 @@
       background: darken($secondary, 10%);
       color: darken(white, 10%);
     }
+
+    &:disabled {
+      background: grey;
+      color: #404040;
+    }
+  }
+
+  &__button-text {
+    position: relative;
   }
 
   &__link {
@@ -128,12 +135,22 @@
 
   &__reminder {
     color: #404040;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 400;
 
-    @include hover {
+    &:hover {
       color: darken(#404040, 10%);
-      font-weight: 600;
+      font-weight: 500;
       cursor: pointer;
+    }
+
+    &--disabled {
+      color: lighten(#404040, 10%);
+      font-weight: 400;
+
+      &:hover {
+        cursor: auto;
+      }
     }
   }
 
@@ -141,9 +158,63 @@
     @include icon(info);
 
     line-height: 18px;
-    
     font-size: 16px;
     color: blue;
     padding-left: 10px;
+  }
+
+  &__error {
+    @include icon(circle-blocked, before);
+    @include elipse;
+    &:before {
+      color: crimson;
+      line-height: 18px;
+      margin-right: 7px;
+    }
+
+    font-size: 14px;
+    line-height: 18px;
+    display: block;
+    text-align: left;
+    padding: 6px 10px;
+    margin: 10px;
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.35);
+    border-radius: 5px;
+  }
+}
+
+.dot-loader {
+  width: 2px;
+  height: 2px;
+  display: inline-block;
+  position: absolute;
+  top: 60%;
+  right: -10px;
+  animation: dot-loader 0.9s ease alternate infinite;
+  animation-delay: 0.36s;
+}
+.dot-loader::after,
+.dot-loader::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  animation: dot-loader 0.9s ease alternate infinite;
+}
+.dot-loader::before {
+  left: -5px;
+  animation-delay: 0.18s;
+}
+.dot-loader::after {
+  right: -5px;
+  animation-delay: 0.54s;
+}
+
+@keyframes dot-loader {
+  0% {
+    box-shadow: 0 2px 0 -2px white;
+  }
+  100% {
+    box-shadow: 0 2px 0 white;
   }
 }

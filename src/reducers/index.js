@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
 import { ActionTypes } from '../actions'
 import { omit } from 'lodash'
+import account from './account'
+import user from './user'
 
 // keep track of previous exercise
 const defaultExerciseState = { previous: null, current: null }
@@ -74,4 +76,6 @@ export default combineReducers({
   exercise,
   exercises,
   routines,
+  account,
+  user,
 })

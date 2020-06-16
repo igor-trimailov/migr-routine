@@ -1,11 +1,18 @@
 import { useState, useEffect, useRef } from 'react'
 import { getLocale } from '../utils'
 
-function getVoice() {
-  const locale = getLocale()
-  const voices = window.speechSynthesis.getVoices()
+function getLocaleVoice(voices, locale) {
+  const preferredVoice = voices.find((voice) => voice.name === locale.voice)
 
-  return voices.find((voice) => voice.name === locale.voice)
+  // seems like voice locale can be either en-GB or en_GB, so just find first
+  // without special symbols
+  return preferredVoice
+    ? preferredVoice
+    : voices.find(
+        (voice) =>
+          voice.lang.replace(/[^a-zA-Z]/gi, '') ===
+          locale.voiceLanguage.replace(/[^a-zA-Z]/gi, '')
+      )
 }
 
 function useSpeech(text, onStart, onEnd) {
@@ -20,33 +27,32 @@ function useSpeech(text, onStart, onEnd) {
   }, [onStart, onEnd])
 
   useEffect(() => {
-    const utter = new window.SpeechSynthesisUtterance()
-    const voice = getVoice()
-    utter.text = text
-    utter.voice = voice
-    utter.language = getLocale.voiceLanguage
-    utter.onstart = savedStartCallback.current
-    utter.onend = savedEndCallback.current
+    const locale = getLocale()
+    const synth = window.speechSynthesis
+    const voices = synth.getVoices()
 
     function handleVoiceChange() {
       setVoicesLoaded(true)
     }
 
-    if (!voice) {
-      window.speechSynthesis.addEventListener(
-        'voiceschanged',
-        handleVoiceChange
-      )
+    // voices are loaded async
+    if (!voices.length) {
+      synth.addEventListener('voiceschanged', handleVoiceChange)
     } else {
-      window.speechSynthesis.speak(utter)
+      const utter = new SpeechSynthesisUtterance()
+      utter.text = text
+      utter.lang = locale.voiceLanguage
+      utter.voice = getLocaleVoice(voices, locale)
+      utter.onstart = savedStartCallback.current
+      utter.onend = savedEndCallback.current
+
+      // speak!
+      synth.speak(utter)
     }
 
     return () => {
-      window.speechSynthesis.cancel()
-      window.speechSynthesis.removeEventListener(
-        'voiceschanged',
-        handleVoiceChange
-      )
+      synth.cancel()
+      synth.removeEventListener('voiceschanged', handleVoiceChange)
     }
   }, [text, voicesLoaded])
 }
