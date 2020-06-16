@@ -1,5 +1,6 @@
 import React from 'react'
 import { Draggable } from 'react-beautiful-dnd'
+import { useTranslation } from 'react-i18next'
 import {
   ListGroupItem,
   Dropdown,
@@ -7,9 +8,10 @@ import {
   ButtonGroup,
 } from 'react-bootstrap'
 
-import Translate from '../common/Translate'
+function ExerciseListItem({ actions, routineId, exercise, index }) {
+  const { t, i18n } = useTranslation()
+  const selectedLanguage = i18n.language
 
-function ExerciseListItem({ actions, routineId, exercise, index, locale }) {
   return (
     <Draggable draggableId={exercise.id.toString()} index={index}>
       {(provided) => (
@@ -20,7 +22,7 @@ function ExerciseListItem({ actions, routineId, exercise, index, locale }) {
         >
           <div className="exercise-list-item">
             <div className="exercise-list-item__name">
-              <Translate item={exercise.name} />
+              {exercise.name[selectedLanguage]}
             </div>
             <div className="exercise-list-item__duration">
               <DropdownButton
@@ -29,14 +31,7 @@ function ExerciseListItem({ actions, routineId, exercise, index, locale }) {
                 id={`dropdown-button-drop-duration`}
                 drop="down"
                 variant="secondary"
-                title={
-                  <Translate
-                    item={{
-                      en_GB: `${exercise.duration} s`,
-                      ru_RU: `${exercise.duration} сек`,
-                    }}
-                  />
-                }
+                title={`${exercise.duration} ${t('exercises.exercise.duration_unit')}`}
                 onSelect={(duration) => {
                   actions.setExerciseDuration({
                     routineId,

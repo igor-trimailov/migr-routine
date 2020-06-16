@@ -6,7 +6,7 @@ import * as HeaderActions from '../actions'
 
 const mapStateToProps = (state) => {
   return {
-    locales: state.locales,
+    user: state.user,
   }
 }
 

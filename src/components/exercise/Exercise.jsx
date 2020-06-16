@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 import { useHistory } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { useInterval, useSpeech } from '../../hooks'
 import ExerciseControls from './ExerciseControls'
-import Translate from '../common/Translate'
 
 import { playSound } from '../../utils'
 import { get } from 'lodash'
@@ -13,11 +14,39 @@ export default function Exercise({ exercise, nextExercise, actions }) {
   const [play, setPlay] = useState(false)
   const [soundPlaying, setSoundPlaying] = useState(true)
   const history = useHistory()
+  const { i18n } = useTranslation()
 
-  const goBack = () => {
-    actions.finishExercise()
-    history.push(`${process.env.PUBLIC_URL}/finished`)
-  }
+  const selectedLanguage = i18n.language
+  const exerciseName = exercise ? exercise.name[selectedLanguage] : ''
+
+  useInterval(
+    () => {
+      if (seconds === 1 && play) {
+        playSound('beep.wav', nextCallback, 2)
+      }
+
+      if (seconds < 6 && seconds !== 1) {
+        playSound('beep.wav')
+      }
+
+      setSeconds(seconds - 1)
+    },
+    play ? 1000 : null
+  )
+
+  useSpeech(
+    exerciseName,
+    () => {
+      setSoundPlaying(true)
+      setPlay(false)
+    },
+    () => {
+      setTimeout(() => {
+        setPlay(true)
+        setSoundPlaying(false)
+      }, 1000)
+    }
+  )
 
   const startExercise = useCallback(
     (exercise) => {
@@ -45,40 +74,11 @@ export default function Exercise({ exercise, nextExercise, actions }) {
     setPlay(!play)
   }, [play])
 
-  useEffect(() => {
-    // check if there is an exercise
-    if (!exercise) {
-      return
-    }
-
-    if (seconds === exercise.duration && !play) {
-      setSoundPlaying(true)
-      playSound(exercise.sound, () => {
-        setPlay(true)
-        // delay the activation of controlls a bit
-        setTimeout(() => {
-          setSoundPlaying(false)
-        }, 1000)
-      })
-    }
-
-    if (seconds === 0 && play) {
-      playSound('beep.wav', nextCallback, 2)
-    }
-
-    if (seconds < 5 && seconds !== 0) {
-      playSound('beep.wav')
-    }
-
-    const interval = setInterval(() => {
-      if (play) {
-        setSeconds(seconds - 1)
-      }
-    }, 1000)
-
-    // clear interval on re-render
-    return () => clearInterval(interval)
-  }, [exercise, nextCallback, seconds, play])
+  const goBack = () => {
+    // cancel()
+    actions.finishExercise()
+    history.push(`${process.env.PUBLIC_URL}/finished`)
+  }
 
   if (!exercise) {
     // in case the exercise was not found, redirect to main page
@@ -89,7 +89,7 @@ export default function Exercise({ exercise, nextExercise, actions }) {
   return (
     <div className="exercise">
       <div className="exercise__header">
-        <Translate item={exercise.name} />
+        {exercise.name[selectedLanguage]}
         <div className="exercise__header-icon" onClick={goBack}></div>
       </div>
       <div className="exercise__body">

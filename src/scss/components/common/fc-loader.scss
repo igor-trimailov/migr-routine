@@ -1,0 +1,75 @@
+.fc-loader {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: $secondary;
+  &__header {
+    background: #202134;
+    height: 51px;
+  }
+  &__body {
+    background: $jumbotron-gradient;
+    height: 456px;
+    position: relative;
+  }
+
+  &__content {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__spinner {
+    width: 75px;
+    height: 75px;
+    display: inline-block;
+    border-width: 3px;
+    border-color: lighten($secondary, 25%);
+    border-top-color: lighten($secondary, 5%);
+    animation: spin 1.5s infinite linear;
+    border-radius: 100%;
+    border-style: solid;
+  }
+
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: 0;
+    background: #202134;
+    height: 230px;
+    width: 100%;
+  }
+}
+
+.fc-overlay {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: #222;
+  &__inner {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  &__content {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  
+}

@@ -16,10 +16,17 @@
   }
 }
 
+// TODO: move these into their own file or file group by some criterium?
 @mixin hover {
   @media not all and (pointer: coarse) {
     &:hover {
       @content;
     }
   }
+}
+
+@mixin elipse {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

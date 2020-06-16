@@ -1,10 +1,12 @@
 import React from 'react'
 import { Draggable } from 'react-beautiful-dnd'
 import { Button, Image } from 'react-bootstrap'
-
-import Translate from '../common/Translate'
+import { useTranslation } from 'react-i18next'
 
 function Routine({ routine, index, selectRoutine }) {
+  const { t, i18n } = useTranslation()
+  const selectedLanguage = i18n.language
+
   const onSelectRoutine = () => {
     selectRoutine(routine.id)
   }
@@ -20,20 +22,23 @@ function Routine({ routine, index, selectRoutine }) {
         >
           <div className="routines-list__item-container">
             <div className="routines-list__item-image">
-              <Image src={process.env.PUBLIC_URL + '/images/' + routine.image.src}
-              alt={routine.image.alt} fluid />
+              <Image
+                src={process.env.PUBLIC_URL + '/images/' + routine.image.src}
+                alt={routine.image.alt}
+                fluid
+              />
             </div>
             <div className="routines-list__item-text">
               <div className="routines-list__item-name">
-                <Translate item={routine.name} />
+                {routine.name[selectedLanguage]}
               </div>
               <div className="routines-list__item-description">
-                <Translate item={routine.description} />
+                {routine.description[selectedLanguage]}
               </div>
             </div>
             <div className="routines-list__item-button">
               <Button variant="primary" onClick={onSelectRoutine}>
-                <Translate lt={'routines.routine.buttons.start'} />
+                {t('routines.routine.buttons.start')}
               </Button>
             </div>
           </div>

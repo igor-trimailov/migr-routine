@@ -1,3 +1,5 @@
+import config from '../configuration'
+
 export const getAudioManager = () => {
   if (!window.AudioManager) {
     window.AudioManager = new Audio()
@@ -63,4 +65,28 @@ function handleDragEnd(result, list, callback) {
   }
 }
 
-export { playSound, reorder, handleDragEnd }
+// get selected/default locale. Locale is stored in local storage and shares between
+// a few components that need it. Only the locale key is stored, the details are
+// stored in the config file.
+function getLocale() {
+  const { locales, defaultLocale } = config
+
+  const storedLocale = window.localStorage.getItem('fizz-cult-locale')
+
+  return storedLocale && locales[storedLocale]
+    ? locales[storedLocale]
+    : locales[defaultLocale]
+}
+
+// set desired locale in the local storage
+function setLocale(newLocale) {
+  const oldLocale = getLocale()
+
+  if (oldLocale.locale !== newLocale) {
+    window.localStorage.setItem('fizz-cult-locale', newLocale)
+  } else {
+    console.log('Error: new locale is the same as the old locale')
+  }
+}
+
+export { playSound, reorder, handleDragEnd, getLocale, setLocale }

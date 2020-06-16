@@ -39,6 +39,14 @@
       margin-left: 10px;
     }
   }
+
+  &__user {
+    @include icon(user);
+
+    &:after {
+      font-size: 16px;
+    }
+  }
 }
 
 .locale-switcher {

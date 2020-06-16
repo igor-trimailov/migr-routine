@@ -8,12 +8,10 @@ import * as ExercisesActions from '../actions'
 const mapStateToProps = (state, ownProps) => {
   const routineId = get(ownProps, 'match.params.routineId')
   const exercises = get(state, ['exercises', routineId], [])
-  const locale = state.locales.find((locale) => locale.selected)
 
   return {
     routineId,
     exercises,
-    locale,
   }
 }
 

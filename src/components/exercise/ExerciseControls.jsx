@@ -13,9 +13,15 @@ function ExerciseControls(props) {
   })
 
   const onPlay = () => {
-    if (disabled) return
+    if (!disabled) {
+      playCallback()
+    }
+  }
 
-    playCallback()
+  const onNext = () => {
+    if (!disabled) {
+      nextCallback()
+    }
   }
 
   return (
@@ -25,7 +31,7 @@ function ExerciseControls(props) {
         onClick={previousCallback}
       ></span>
       <span className={playClassName} onClick={onPlay}></span>
-      <span className="exercise-controls__next" onClick={nextCallback}></span>
+      <span className="exercise-controls__next" onClick={onNext}></span>
     </div>
   )
 }

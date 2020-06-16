@@ -1,0 +1,220 @@
+.fc-modal {
+  background-color: #fefefe;
+  border-radius: 10px;
+  margin: 10% auto; /* 15% from the top and centered */
+  padding: 20px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+
+  &__wrapper {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__close {
+    @include icon(circle-close);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #404040;
+
+    @include hover {
+      color: $secondary;
+    }
+  }
+}
+
+.fc-form {
+  display: flex;
+  flex-direction: column;
+  &__header {
+    text-align: center;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    height: 400px;
+    width: 60%;
+    margin: 0 auto;
+  }
+  &__label {
+    display: block;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 25px auto 0;
+    text-align: center;
+    color: #cfcfcf;
+    overflow: hidden;
+    flex: 1;
+    opacity: 1;
+
+    &--hidden {
+      flex: 0;
+      opacity: 0;
+    }
+
+    // fancy transitions
+    &-enter {
+      transition: all 0.3s ease-in-out;
+      height: auto;
+      flex: 1;
+      opacity: 1;
+    }
+    &-exit {
+      flex: 0;
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    text-align: center;
+  }
+
+  &__button {
+    margin: 50px auto 20px;
+    width: 250px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    color: white;
+    background: $secondary;
+    padding: 10px 0;
+    outline-color: white;
+
+    @include hover {
+      background: darken($secondary, 10%);
+      color: darken(white, 10%);
+    }
+
+    &:disabled {
+      background: grey;
+      color: #404040;
+    }
+  }
+
+  &__button-text {
+    position: relative;
+  }
+
+  &__link {
+    display: inline;
+    font-weight: 700;
+    color: $secondary;
+    border-bottom: 2px solid $secondary;
+    cursor: pointer;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &__reminder {
+    color: #404040;
+    font-size: 12px;
+    font-weight: 400;
+
+    &:hover {
+      color: darken(#404040, 10%);
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    &--disabled {
+      color: lighten(#404040, 10%);
+      font-weight: 400;
+
+      &:hover {
+        cursor: auto;
+      }
+    }
+  }
+
+  &__password-info {
+    @include icon(info);
+
+    line-height: 18px;
+    font-size: 16px;
+    color: blue;
+    padding-left: 10px;
+  }
+
+  &__error {
+    @include icon(circle-blocked, before);
+    @include elipse;
+    &:before {
+      color: crimson;
+      line-height: 18px;
+      margin-right: 7px;
+    }
+
+    font-size: 14px;
+    line-height: 18px;
+    display: block;
+    text-align: left;
+    padding: 6px 10px;
+    margin: 10px;
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.35);
+    border-radius: 5px;
+  }
+}
+
+.dot-loader {
+  width: 2px;
+  height: 2px;
+  display: inline-block;
+  position: absolute;
+  top: 60%;
+  right: -10px;
+  animation: dot-loader 0.9s ease alternate infinite;
+  animation-delay: 0.36s;
+}
+.dot-loader::after,
+.dot-loader::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  animation: dot-loader 0.9s ease alternate infinite;
+}
+.dot-loader::before {
+  left: -5px;
+  animation-delay: 0.18s;
+}
+.dot-loader::after {
+  right: -5px;
+  animation-delay: 0.54s;
+}
+
+@keyframes dot-loader {
+  0% {
+    box-shadow: 0 2px 0 -2px white;
+  }
+  100% {
+    box-shadow: 0 2px 0 white;
+  }
+}

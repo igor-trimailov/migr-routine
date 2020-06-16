@@ -48,15 +48,63 @@ export function setExerciseDuration(data) {
   }
 }
 
-export function switchLocale(data) {
+export function finishExercise() {
   return {
-    type: ActionTypes.SWITCH_LOCALE,
+    type: ActionTypes.FINISH_EXERCISE,
+  }
+}
+
+export function apiError(error) {
+  return {
+    type: ActionTypes.API_ERROR,
+    payload: error,
+  }
+}
+
+export function accountRequestLogin(formData) {
+  return {
+    type: ActionTypes.ACCOUNT_REQUEST_LOGIN,
+    payload: formData,
+  }
+}
+
+export function accountLoginSuccess(data) {
+  return {
+    type: ActionTypes.ACCOUNT_RECEIVE_LOGIN_SUCCESS,
     payload: data,
   }
 }
 
-export function finishExercise() {
+export function accountLoginError(error) {
   return {
-    type: ActionTypes.FINISH_EXERCISE,
+    type: ActionTypes.ACCOUNT_RECEIVE_LOGIN_ERROR,
+    payload: error,
+  }
+}
+
+export function accountLogout() {
+  return {
+    type: ActionTypes.ACCOUNT_LOGOUT,
+  }
+}
+
+export function accountRequestRegister(data) {
+  return {
+    type: ActionTypes.ACCOUNT_REQUEST_REGISTER,
+    payload: data,
+  }
+}
+
+export function accountRegisterSuccess(data) {
+  return {
+    type: ActionTypes.ACCOUNT_RECEIVE_REGISTER_SUCCESS,
+    payload: data,
+  }
+}
+
+export function accountRegisterError(error) {
+  return {
+    type: ActionTypes.ACCOUNT_RECEIVE_REGISTER_ERROR,
+    payload: error,
   }
 }
