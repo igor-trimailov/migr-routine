@@ -4,7 +4,7 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useTranslation } from 'react-i18next'
 
 import Routine from './routine/Routine'
-import { Header } from './common'
+import { Jumbotron } from './common'
 
 import { handleDragEnd } from '../utils'
 
@@ -30,7 +30,7 @@ function Routines({ actions, routines }) {
 
   return (
     <div className="routines">
-      <Header
+      <Jumbotron
         heading={t('routines.header.heading')}
         text={t('routines.header.text')}
         image="logo.png"

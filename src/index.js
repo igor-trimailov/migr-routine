@@ -13,7 +13,7 @@ import {
 
 import './scss/index.scss'
 import './i18next'
-import { Exercise, Exercises, Routines, TopNav, Modal } from './containers'
+import { Exercise, Exercises, Routines, Header, Modal } from './containers'
 import { ScrollToTop, Footer, Loader } from './components/common'
 import ExerciseFinished from './components/exercise/ExerciseFinished'
 
@@ -22,6 +22,13 @@ const { store, persistor } = configureStore()
 export default function RouterSwitch() {
   const location = useLocation()
   const background = location.state && location.state.background
+
+  const NotFound = () => (
+    <div className="fc-404">
+      <h3>404 page not found</h3>
+      <p>We are sorry but the page you are looking for does not exist.</p>
+    </div>
+  )
 
   return (
     <div className="body">
@@ -49,6 +56,7 @@ export default function RouterSwitch() {
           component={Routines}
         />
         <Route exact path={process.env.PUBLIC_URL + '/'} component={Routines} />
+        <Route path="*" component={NotFound} />
       </Switch>
       {background && (
         <Route
@@ -66,7 +74,7 @@ ReactDOM.render(
     <PersistGate loading={null} persistor={persistor}>
       <Router onUpdate={() => window.scrollTo(0, 0)}>
         <Suspense fallback={<Loader />}>
-          <TopNav />
+          <Header />
           <ScrollToTop />
           <RouterSwitch />
           <Footer />

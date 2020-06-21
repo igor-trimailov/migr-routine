@@ -1,7 +1,7 @@
-import TopNav from './TopNav'
 import Header from './Header'
+import Jumbotron from './Jumbotron'
 import Footer from './Footer'
 import ScrollToTop from './ScrollToTop'
 import Loader from './Loader'
 
-export { TopNav, Header, Footer, ScrollToTop, Loader }
+export { Header, Jumbotron, Footer, ScrollToTop, Loader }

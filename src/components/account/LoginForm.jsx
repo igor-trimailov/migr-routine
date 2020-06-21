@@ -17,7 +17,7 @@ function LoginForm(props) {
     return <div>Wellcome back... you...</div>
   }
 
-  // TODO: add pretty message and reditect to login popup
+  // TODO: add pretty message and reditect to login screen
   if (isRegistered) {
     return <div>Registration was successfull!</div>
   }

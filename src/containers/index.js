@@ -1,7 +1,7 @@
 import Exercise from './Exercise'
 import Exercises from './Exercises'
 import Routines from './Routines'
-import TopNav from './TopNav'
+import Header from './Header'
 import Modal from './Modal'
 
-export { Exercise, Exercises, Routines, TopNav, Modal }
+export { Exercise, Exercises, Routines, Header, Modal }

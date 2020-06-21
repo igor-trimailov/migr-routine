@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 
 import { getAudioManager } from '../utils'
 import ExerciseList from './exercise/ExerciseList'
-import { Header } from './common'
+import { Jumbotron } from './common'
 
 function Exercises(props) {
   const { t } = useTranslation()
@@ -28,7 +28,7 @@ function Exercises(props) {
 
   return (
     <div className="exercises">
-      <Header
+      <Jumbotron
         heading={t('exercises.header.heading')}
         text={t('exercises.header.text')}
         image="logo.png"
@@ -36,7 +36,7 @@ function Exercises(props) {
         <Button variant="secondary" onClick={startExercise}>
           {t('exercises.header.button')}
         </Button>
-      </Header>
+      </Jumbotron>
       <ExerciseList {...{ actions, exercises, routineId }} />
     </div>
   )

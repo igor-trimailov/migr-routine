@@ -1,69 +1,74 @@
 .fc-header {
-  background: rgb(211, 209, 210);
-  background: linear-gradient(
-    180deg,
-    rgba(211, 209, 210, 1) 0%,
-    rgba(229, 229, 228, 1) 80%,
-    rgba(250, 247, 253, 1) 100%
-  );
-  position: relative;
-  padding: 25px 0;
+  height: 55px;
+  width: 100%;
+  background: #202124;
+  color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  &__container {
+  &__content {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 10px 15px;
 
-    @include breakpoint-up(m) {
-      flex-direction: row;
-      padding: 0 20px 40px 20px;
+    @include breakpoint-up(ml) {
       width: 80%;
+      margin: 0 auto;
     }
 
-    @include breakpoint-up(l){
+    @include breakpoint-up(ml) {
       width: 60%;
     }
   }
-  &__text {
-    flex-grow: 2;
-    margin-bottom: 30px;
-  }
-  &__text-heading {
-    font-size: 40px;
-    line-height: 46px;
-    font-weight: 600;
-    margin-bottom: 10px;
+
+  &__title {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px;
   }
 
-  &__text-text {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  &__image {
+  &__nav {
     display: flex;
-    margin: 0 auto 30px auto;
-    max-width: 400px;
-
-    @include breakpoint-up(m) {
-      min-width: 300px;
-      margin: auto 0;
+    &-item {
+      font-size: 14px;
+      font-weight: 500;
+      padding: 5px;
+      margin-left: 10px;
     }
   }
 
-  &__children {
-    display: flex;
-    align-content: center;
-    justify-content: center;
+  &__user {
+    @include icon(user);
 
-    @include breakpoint-up(m) {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 25px;
-      margin: 0 auto;
+    &:after {
+      font-size: 16px;
+    }
+  }
+}
+
+.locale-switcher {
+  img {
+    max-width: 20px;
+  }
+
+  &__locale-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__locale {
+    display: flex;
+
+    img {
+      max-width: 20px;
+      margin-right: 5px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
     }
   }
 }

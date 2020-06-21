@@ -6,16 +6,23 @@
 @import './mixins';
 @import './components';
 
-html, body, #root {
-    height: 100%;
-    overflow: auto;
+html,
+body,
+#root {
+  height: 100%;
+  overflow: auto;
 }
 
 #root {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .body {
-    flex-grow: 1;
+  flex-grow: 1;
+}
+
+.fc-404 {
+  padding: 40px 0;
+  text-align: center;
 }

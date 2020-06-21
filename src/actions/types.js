@@ -16,6 +16,7 @@ export const ActionTypes = {
 
   API_ERROR: 'API_ERROR',
 
+  // TODO: write a separate account widget
   ACCOUNT_LOGOUT: 'ACCOUNT_LOGOUT',
   ACCOUNT_OPEN: 'ACCOUNT_OPEN',
   ACCOUNT_REQUEST_LOGIN: 'ACCOUNT_REQUEST_LOGIN',

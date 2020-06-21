@@ -7,6 +7,7 @@ import {
 } from './index'
 import { accountLoginSuccess, accountLoginError } from './creators'
 
+// TODO: load routines from an api call
 export const requestRoutinesData = () => async (dispatch) => {
   dispatch(requestRoutines())
   await fetch(process.env.PUBLIC_URL + '/data.json')
@@ -45,6 +46,8 @@ export function restApiCall(url, options = {}) {
   })
     .then(
       (response) => {
+        // success and validation fail responses will return a human readable message
+        // TODO: translate the message
         if (response.status === 200 || response.status === 422) {
           return response.json().then((data) => {
             // api will return status of 'success' on good calls, oterwise it's an error
