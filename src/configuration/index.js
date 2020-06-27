@@ -1,6 +1,7 @@
 import { BREAK_EXERCISE } from '../constants'
 
 export default {
+  API_BASE_URL: 'http://localhost:5000/api/v1',
   defaultLocale: 'en_GB',
   locales: {
     en_GB: {

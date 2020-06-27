@@ -12,15 +12,17 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    padding: 10px 15px;
+    padding: 10px 5px;
 
-    @include breakpoint-up(ml) {
+    @include breakpoint-up(m) {
       width: 80%;
       margin: 0 auto;
+      padding: 10px 15px;
     }
 
-    @include breakpoint-up(ml) {
+    @include breakpoint-up(l) {
       width: 60%;
+      padding: 10px 15px;
     }
   }
 

@@ -4,7 +4,7 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useTranslation } from 'react-i18next'
 
 import Routine from './routine/Routine'
-import { Jumbotron } from './common'
+import { Authenticated, Jumbotron } from './common'
 
 import { handleDragEnd } from '../utils'
 
@@ -34,7 +34,11 @@ function Routines({ actions, routines }) {
         heading={t('routines.header.heading')}
         text={t('routines.header.text')}
         image="logo.png"
-      />
+      >
+        <Authenticated>
+          <button>Add a new routine</button>
+        </Authenticated>
+      </Jumbotron>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="list">
           {(provided) => (

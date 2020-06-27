@@ -3,5 +3,6 @@ import Jumbotron from './Jumbotron'
 import Footer from './Footer'
 import ScrollToTop from './ScrollToTop'
 import Loader from './Loader'
+import Authenticated from './Authenticated'
 
-export { Header, Jumbotron, Footer, ScrollToTop, Loader }
+export { Authenticated, Footer, Header, Jumbotron, Loader, ScrollToTop }

@@ -1,5 +1,5 @@
 import { ActionTypes } from '../actions'
-import { register, authenticate } from '../actions/api'
+import { register, authenticate, passwordReset } from '../actions/api'
 
 // after the action?
 export default (store) => (next) => (action) => {
@@ -15,6 +15,9 @@ export default (store) => (next) => (action) => {
       authenticate(dispatch, action.payload)
       break
 
+    case ActionTypes.ACCOUNT_REQUEST_PASSWORD_RESET:
+      passwordReset(dispatch, action.payload)
+      break
     default:
     // console.log('Unrecognized action: ' + action.type)
   }

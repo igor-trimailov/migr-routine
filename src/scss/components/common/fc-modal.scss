@@ -1,12 +1,16 @@
 .fc-modal {
   background-color: #fefefe;
-  border-radius: 10px;
-  margin: 10% auto; /* 15% from the top and centered */
-  padding: 20px;
-  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 600px;
-  position: relative;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+
+  @include breakpoint-up(m) {
+    border-radius: 10px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.1);
+    margin: 10% auto;
+    width: 90%;
+    max-width: 600px;
+  }
 
   &__wrapper {
     position: fixed;
@@ -25,14 +29,18 @@
   &__close {
     @include icon(circle-close);
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0;
+    right: 5px;
     font-size: 24px;
     color: #404040;
 
     @include hover {
       color: $secondary;
     }
+  }
+
+  &__header {
+    margin-bottom: 20px;
   }
 }
 
@@ -47,9 +55,16 @@
     flex-direction: column;
     justify-content: flex-start;
     text-align: center;
-    height: 400px;
-    width: 60%;
+    width: 90%;
     margin: 0 auto;
+
+    @include breakpoint-up(m) {
+      width: 60%;
+    }
+
+    @include breakpoint-up(l) {
+      width: 60%;
+    }
   }
   &__label {
     display: block;
@@ -67,17 +82,9 @@
       opacity: 0;
     }
 
-    // fancy transitions
-    &-enter {
-      transition: all 0.3s ease-in-out;
-      height: auto;
-      flex: 1;
-      opacity: 1;
-    }
-    &-exit {
-      flex: 0;
-      opacity: 1;
-      transition: all 0.3s ease-in-out;
+    &-text {
+      display: inline-flex;
+      line-height: 16px;
     }
   }
 
@@ -95,7 +102,7 @@
 
   &__button {
     margin: 50px auto 20px;
-    width: 250px;
+    width: 80%;
     border: none;
     border-radius: 10px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
@@ -104,9 +111,12 @@
     padding: 10px 0;
     outline-color: white;
 
+    @include breakpoint-up(m) {
+      width: 250px;
+    }
+
     @include hover {
       background: darken($secondary, 10%);
-      color: darken(white, 10%);
     }
 
     &:disabled {
@@ -136,30 +146,34 @@
   &__reminder {
     color: #404040;
     font-size: 12px;
-    font-weight: 400;
+    cursor: pointer;
 
     &:hover {
-      color: darken(#404040, 10%);
-      font-weight: 500;
-      cursor: pointer;
+      text-decoration: underline;
+      color: black;
     }
+  }
 
-    &--disabled {
-      color: lighten(#404040, 10%);
-      font-weight: 400;
+  &__sign-up {
+    color: #404040;
+    font-size: 14px;
+
+    &-here {
+      font-weight: 500;
+      padding-left: 5px;
+      cursor: pointer;
 
       &:hover {
-        cursor: auto;
+        text-decoration: underline;
+        color: black;
       }
     }
   }
 
   &__password-info {
     @include icon(info);
-
-    line-height: 18px;
-    font-size: 16px;
-    color: blue;
+    font-size: 14px;
+    color: #17a2b8;
     padding-left: 10px;
   }
 
@@ -168,14 +182,33 @@
     @include elipse;
     &:before {
       color: crimson;
-      line-height: 18px;
+      vertical-align: middle;
       margin-right: 7px;
+      font-size: 18px;
     }
 
     font-size: 14px;
-    line-height: 18px;
+    line-height: 30px;
     display: block;
-    text-align: left;
+    padding: 6px 10px;
+    margin: 10px;
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.35);
+    border-radius: 5px;
+  }
+
+  &__notification {
+    @include icon(user-check, before);
+    @include elipse;
+    &:before {
+      color: green;
+      margin-right: 7px;
+      vertical-align: middle;
+      font-size: 18px;
+    }
+
+    font-size: 14px;
+    line-height: 30px;
+    display: block;
     padding: 6px 10px;
     margin: 10px;
     box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.35);

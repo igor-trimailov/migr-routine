@@ -15,6 +15,10 @@ function Header(props) {
     actions.accountLogout()
   }, [actions])
 
+  const handleOpenLogin = useCallback(() => {
+    actions.accountOpenLoginForm()
+  }, [actions])
+
   const CustomToggle = React.forwardRef(({ onClick }, ref) => (
     <span
       className="fc-header__user"
@@ -40,6 +44,7 @@ function Header(props) {
         pathname: `${process.env.PUBLIC_URL}/account/login`,
         state: { background: location },
       }}
+      onClick={handleOpenLogin}
     >
       {t('header.nav.login')}
     </Link>

@@ -61,6 +61,12 @@ export function apiError(error) {
   }
 }
 
+export function accountOpenLoginForm() {
+  return {
+    type: ActionTypes.ACCOUNT_OPEN_LOGIN_FORM,
+  }
+}
+
 export function accountRequestLogin(formData) {
   return {
     type: ActionTypes.ACCOUNT_REQUEST_LOGIN,
@@ -75,16 +81,15 @@ export function accountLoginSuccess(data) {
   }
 }
 
-export function accountLoginError(error) {
-  return {
-    type: ActionTypes.ACCOUNT_RECEIVE_LOGIN_ERROR,
-    payload: error,
-  }
-}
-
 export function accountLogout() {
   return {
     type: ActionTypes.ACCOUNT_LOGOUT,
+  }
+}
+
+export function accountOpenRegisterForm() {
+  return {
+    type: ActionTypes.ACCOUNT_OPEN_REGISTER_FORM,
   }
 }
 
@@ -102,9 +107,29 @@ export function accountRegisterSuccess(data) {
   }
 }
 
-export function accountRegisterError(error) {
+export function accountOpenPasswordResetForm() {
   return {
-    type: ActionTypes.ACCOUNT_RECEIVE_REGISTER_ERROR,
+    type: ActionTypes.ACCOUNT_OPEN_RESET_FORM,
+  }
+}
+
+export function accountRequestPasswordReset(data) {
+  return {
+    type: ActionTypes.ACCOUNT_REQUEST_PASSWORD_RESET,
+    payload: data,
+  }
+}
+
+export function accountPasswordResetSuccess(data) {
+  return {
+    type: ActionTypes.ACCOUNT_RECEIVE_PASSWORD_RESET_SUCCESS,
+    payload: data,
+  }
+}
+
+export function accountApiError(error) {
+  return {
+    type: ActionTypes.ACCOUNT_RECEIVE_API_ERROR,
     payload: error,
   }
 }

@@ -1,29 +1,20 @@
-import {
-  requestRoutines,
-  receiveRoutinesSuccess,
-  receiveRoutinesError,
-  accountRegisterSuccess,
-  accountRegisterError,
-} from './index'
-import { accountLoginSuccess, accountLoginError } from './creators'
+import * as creators from './creators'
+import config from '../configuration'
 
 // TODO: load routines from an api call
 export const requestRoutinesData = () => async (dispatch) => {
-  dispatch(requestRoutines())
+  dispatch(creators.requestRoutines())
   await fetch(process.env.PUBLIC_URL + '/data.json')
     .then((res) => res.json())
     .then((data) => {
       console.log('fetced data', data)
-      dispatch(receiveRoutinesSuccess(data))
+      dispatch(creators.receiveRoutinesSuccess(data))
     })
     .catch((e) => {
       console.warn('data fetch error', e)
-      dispatch(receiveRoutinesError('Could not fetch data'))
+      dispatch(creators.receiveRoutinesError('Could not fetch data'))
     })
 }
-
-// TODO: move inside config:
-const API_BASE_URL = 'http://localhost:5000/api/v1'
 
 // TODO: handle 401 and 403
 
@@ -35,7 +26,7 @@ const API_BASE_URL = 'http://localhost:5000/api/v1'
  * @param {Object} options - optional options object, use to supply body and/or switch method
  */
 export function restApiCall(url, options = {}) {
-  return fetch(API_BASE_URL + url, {
+  return fetch(config.API_BASE_URL + url, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
@@ -48,7 +39,7 @@ export function restApiCall(url, options = {}) {
       (response) => {
         // success and validation fail responses will return a human readable message
         // TODO: translate the message
-        if (response.status === 200 || response.status === 422) {
+        if (response.status === 200 || response.status === 422 || response.status === 401) {
           return response.json().then((data) => {
             // api will return status of 'success' on good calls, oterwise it's an error
             if (!data.success) {
@@ -105,12 +96,12 @@ export async function register(dispatch, data) {
     const response = await restApiCall(url, options)
 
     if (response.success) {
-      dispatch(accountRegisterSuccess())
+      dispatch(creators.accountRegisterSuccess())
     } else {
-      dispatch(accountRegisterError(response.error))
+      dispatch(creators.accountApiError(response.error))
     }
   } catch (error) {
-    dispatch(accountRegisterError(error))
+    dispatch(creators.accountApiError(error))
   }
 }
 
@@ -130,11 +121,36 @@ export async function authenticate(dispatch, data) {
     const response = await restApiCall(url, options)
 
     if (response.success) {
-      dispatch(accountLoginSuccess(response.data))
+      dispatch(creators.accountLoginSuccess(response.data))
     } else {
-      dispatch(accountLoginError(response.error))
+      dispatch(creators.accountApiError(response.error))
     }
   } catch (error) {
-    dispatch(accountLoginError(error))
+    dispatch(creators.accountApiError(error))
+  }
+}
+
+/**
+ * Authenticate existing user
+ * @param {*} dispatch
+ * @param {*} data
+ */
+export async function passwordReset(dispatch, data) {
+  const url = '/users/recover/'
+  const options = {
+    method: 'POST',
+    body: new URLSearchParams(data),
+  }
+
+  try {
+    const response = await restApiCall(url, options)
+
+    if (response.success) {
+      dispatch(creators.accountPasswordResetSuccess(response.data))
+    } else {
+      dispatch(creators.accountApiError(response.error))
+    }
+  } catch (error) {
+    dispatch(creators.accountApiError(error))
   }
 }
