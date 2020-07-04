@@ -31,13 +31,13 @@ function useSpeech(text, onStart, onEnd) {
     const synth = window.speechSynthesis
     const voices = synth.getVoices()
 
-    function handleVoiceChange() {
-      setVoicesLoaded(true)
+    const handleVoiceChange = () => {
+      setVoicesLoaded((loaded) => !loaded)
     }
 
     // voices are loaded async
     if (!voices.length) {
-      synth.addEventListener('voiceschanged', handleVoiceChange)
+      synth.addEventListener('voiceschanged', handleVoiceChange, true)
     } else {
       const utter = new SpeechSynthesisUtterance()
       utter.text = text
@@ -52,7 +52,11 @@ function useSpeech(text, onStart, onEnd) {
 
     return () => {
       synth.cancel()
-      synth.removeEventListener('voiceschanged', handleVoiceChange)
+
+      // safari ios hack
+      if (typeof synth.removeEventListener === 'function') {
+        synth.removeEventListener('voiceschanged', handleVoiceChange, true)
+      }
     }
   }, [text, voicesLoaded])
 }

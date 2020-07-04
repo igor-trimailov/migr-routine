@@ -33,23 +33,26 @@
   &__body {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: calc(100% - 55px);
+    margin-bottom: 55px;
     border-radius: 5px;
   }
 
   &__image {
     display: flex;
-    margin: 0 auto;
-    img {
+    margin: 0 auto 20px auto;
+    > img {
+      object-fit: contain;
       max-width: 100%;
+      height: auto;
     }
   }
 
   &__timer {
     display: flex;
+    flex-grow: 1;
     max-width: 125px;
-    margin: 0 auto;
-    flex-basis: 40%;
+    margin: 0 auto 10px auto;
   }
 
   &__footer {
@@ -59,7 +62,7 @@
     right: 0;
     height: 55px;
     width: 100%;
-    background: #ED595F;
+    background: #ed595f;
     z-index: 3;
 
     @include breakpoint-up(m) {
@@ -118,7 +121,7 @@
     font-size: 18px;
     font-weight: 600;
     line-height: 24px;
-    color: #ED595F;
+    color: #ed595f;
     margin-bottom: 20px;
   }
   &__body {

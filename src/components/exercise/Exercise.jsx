@@ -31,7 +31,7 @@ export default function Exercise({ exercise, nextExercise, actions }) {
 
       setSeconds(seconds - 1)
     },
-    play ? 1000 : null
+    play && seconds > 0 ? 1000 : null
   )
 
   useSpeech(
@@ -71,8 +71,8 @@ export default function Exercise({ exercise, nextExercise, actions }) {
   }, [startExercise, exercise])
 
   const playCallback = useCallback(() => {
-    setPlay(!play)
-  }, [play])
+    setPlay(play => !play)
+  }, [])
 
   const goBack = () => {
     // cancel()

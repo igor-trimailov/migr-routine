@@ -43,9 +43,8 @@
   }
 
   &__image {
-    display: flex;
-    margin: 0 auto 30px auto;
-    max-width: 400px;
+    max-width: 100%;
+    height: auto;
 
     @include breakpoint-up(m) {
       min-width: 300px;

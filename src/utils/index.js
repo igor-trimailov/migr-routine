@@ -18,7 +18,7 @@ function playSound(sound, callback, numTimes = 1) {
   audio.src = process.env.PUBLIC_URL + '/sounds/' + sound
 
   const handler = () => {
-    audio.removeEventListener('ended', handler)
+    audio.removeEventListener('ended', handler, true)
     numTimes = numTimes - 1
 
     if (numTimes === 0) {
@@ -26,12 +26,12 @@ function playSound(sound, callback, numTimes = 1) {
         callback()
       }
     } else {
-      audio.addEventListener('ended', handler)
+      audio.addEventListener('ended', handler, true)
       audio.play()
     }
   }
 
-  audio.addEventListener('ended', handler)
+  audio.addEventListener('ended', handler, true)
   audio.play()
 }
 
