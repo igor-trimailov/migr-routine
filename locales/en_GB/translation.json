@@ -1,0 +1,30 @@
+{
+  "header": {
+    "title": "Exercise Routines",
+    "nav": { "about": "About", "login": "Login" }
+  },
+  "routines": {
+    "header": {
+      "heading": "Start your exercise by selecting one of the routines!",
+      "text": "Select one of the available routines and start your exercise! More routines will be available soonish"
+    },
+    "routine": { "buttons": { "start": "Start exercise!" } }
+  },
+  "exercises": {
+    "header": {
+      "heading": "Start your exercise by pressing start button!",
+      "text": "You can change the order of exercises by dragging them around. There will be a 5s break between exercises. Good Luck!",
+      "button": "Start exercise!"
+    },
+    "exercise": {
+      "duration": "Duration",
+      "duration_unit" : "s",
+      "finished": {
+        "header": "Congratulations!",
+        "body": "If you feel like you can take on another routine, click on the button below. Otherwise we will see you next time!",
+        "button": "Go back to routines"
+      }
+    }
+  },
+  "footer": null
+}
